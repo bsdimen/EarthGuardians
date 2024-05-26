@@ -3,13 +3,13 @@
 $font-family: Mada, serif;
 
 // Font Sizes
-$font-size-base: 16px;
+$font-size-base: 18px;
 $font-size-large: 1.25rem; // 20px
 $font-size-small: 0.875rem; // 14px
 
 // Line Heights
 $line-height-base: 1.5;
-$line-height-heading: 1.2;
+$line-height-heading: 1.5;
 
 // Headings
 $h1-font-size: 2.5rem; // 40px
@@ -62,12 +62,15 @@ h6 {
   line-height: $line-height-heading;
   font-family: $font-family;
 }
-
-// Typography exceptions
-.nav-link {
-    font-size: 18px;
-    font-weight: 500;
+p {
+  font-size: $font-size-base;
+  line-height:$line-height-base;
 }
+button {
+  font-family: $font-family;
+}
+// Typography exceptions
+
 .hero-section p {
     line-height: 33px;
     font-size: 20px;

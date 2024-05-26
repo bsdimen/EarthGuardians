@@ -1,0 +1,61 @@
+{
+  "resources": [
+    {
+      "id": 1,
+      "type": "article",
+      "title": "The Impact of Climate Change on Biodiversity",
+      "author": "John Doe",
+      "publication_date": "2023-05-15",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+      "image": "../src/IMGS/articles-covers/article-cover-01.jpg",
+      "description": "This article explores the profound effects of climate change on biodiversity, shedding light on the urgent need for conservation efforts."
+    },
+    {
+      "id": 2,
+      "type": "article",
+      "title": "Sustainable Agriculture Practices",
+      "author": "Jane Smith",
+      "publication_date": "2023-07-20",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...",
+      "image": "../src/IMGS/articles-covers/article-cover-01.jpg",
+      "description": "This article delves into sustainable agricultural methods, highlighting their importance in mitigating environmental degradation and ensuring food security."
+    },
+    {
+      "id": 1,
+      "type": "book",
+      "title": "Silent Spring",
+      "author": "Rachel Carson",
+      "publication_date": "1962-09-27",
+      "description": "An environmental science book documenting the adverse environmental effects caused by the indiscriminate use of pesticides.",
+      "image": "../src/IMGS/articles-covers/article-cover-01.jpg"
+    },
+    {
+      "id": 2,
+      "type": "book",
+      "title": "The Sixth Extinction: An Unnatural History",
+      "author": "Elizabeth Kolbert",
+      "publication_date": "2014-02-11",
+      "description": "A non-fiction book about mass extinction events and their impact on biodiversity.",
+      "image": "https://example.com/book2_image.jpg"
+    },
+    {
+      "id": 1,
+      "type": "documentary",
+      "title": "Before the Flood",
+      "director": "Fisher Stevens",
+      "release_date": "2016-10-21",
+      "description": "A documentary film about climate change, featuring Leonardo DiCaprio on a journey as a United Nations Messenger of Peace, traveling to five continents and the Arctic.",
+      "image": "https://example.com/documentary1_image.jpg"
+    },
+    {
+      "id": 2,
+      "type": "documentary",
+      "title": "An Inconvenient Truth",
+      "director": "Davis Guggenheim",
+      "release_date": "2006-05-24",
+      "description": "A documentary film about former United States Vice President Al Gore's campaign to educate people about global warming.",
+      "image": "https://example.com/documentary2_image.jpg"
+    }
+  ]
+}
+

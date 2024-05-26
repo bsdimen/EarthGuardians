@@ -1,16 +1,17 @@
 
 header {
     padding: 84px 126px;
-}
-.nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.nav-item {
+
+header a {
     margin-right: 42px;
+    font-size: 18px;
+    font-weight: 500;
 }
-.nav-list {
+nav {
     display: flex;
     flex-direction: row;
     align-content: center;

@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Mada:wght@200..900&display=swap');
-@import 'variables';
-@import '_typography.scss';
-@import '_base.scss';
-@import 'utilities';
-@import 'animation';
-@import '_navbar.scss';
-@import '_home.scss';
+@import 'Base/variables';
+@import 'Base/_typography.scss';
+@import 'Base/_base.scss';
+@import 'Utilities/utilities';
+@import 'Utilities/animation';
+@import 'Components/navbar';
+@import 'Pages/home';
+@import 'Pages/educational'

@@ -1,0 +1,40 @@
+.educational {
+    padding-block: 25px;
+   margin: 0 126px;
+}
+.edu-content {
+    width: 70%;
+}
+.edu-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-block: 35px;
+    
+}
+.edu-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 25px;
+    font-size: $h5-font-size;
+    font-weight: 700;
+    width: 100%;
+    border-bottom: 2px solid #F4F4F4;
+    
+}
+.edu-link.active {
+    border-bottom-color: $primary-color;
+}
+.edu-link:last-child {
+    border-right: none;
+}
+.article-item {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-row: 1;
+    margin-bottom: 25px;
+}
+.article-item-cover img {
+    width: 150px;
+}

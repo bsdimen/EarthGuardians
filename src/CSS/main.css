@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Mada:wght@200..900&display=swap");
+body {
+  font-family: Mada, serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+h5 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+.nav-link {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.hero-section p {
+  line-height: 33px;
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #222222;
+}
+
+ul {
+  list-style: none;
+}
+
+a:hover {
+  color: #222222;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.btn-primary {
+  background-color: #0EC277;
+  color: white;
+  border-radius: 50px;
+  padding: 12px 36px;
+  margin-top: 24px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.loading-block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #FCFCFC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.circle {
+  width: 0%;
+  padding: 19px 45px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  animation: downloadProgress 10s linear 1;
+}
+
+@keyframes downloadProgress {
+  from {
+    border: none;
+  }
+  to {
+    border: 2px solid #0EC277;
+  }
+}
+header {
+  padding: 84px 126px;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-item {
+  margin-right: 42px;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.hero-section {
+  margin: 0 126px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hero-section .hero-text p {
+  width: 500px;
+  margin-top: 12px;
+}
+
+.our-initiatives {
+  margin: 126px;
+  display: flex;
+  flex-direction: column;
+}
+
+.our-initiatives h1 {
+  margin-bottom: 50px;
+}
+
+.ini-container {
+  display: grid;
+  grid-auto-columns: 1fr 1.5fr;
+  grid-auto-flow: column;
+}
+
+.intiative-contents {
+  display: flex;
+  align-items: center;
+}
+
+.single-intiative-content {
+  padding: 0 35px;
+  width: 70%;
+}
+
+.single-intiative-content img {
+  transform: scale(0.8);
+}
+
+.intiative-content h3 {
+  color: #222222;
+  margin-bottom: 10px;
+}
+
+.intiative-content p {
+  color: #222222;
+  line-height: 31px;
+}
+
+.roles-grid {
+  display: grid;
+  grid-auto-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  grid-auto-flow: column;
+  margin: 0 126px;
+}
+
+.role-item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 230px;
+  gap: 10px;
+  padding: 75px 25px;
+  border: 2px solid #0EC277;
+  border-radius: 21px;
+}
+
+.role-item p {
+  text-align: center;
+}
+
+.role-item:hover {
+  background-color: #0EC277;
+  color: #FCFCFC;
+  transform: scale(1.1);
+  transition: 90ms ease-in-out;
+}
+
+/*# sourceMappingURL=main.css.map */

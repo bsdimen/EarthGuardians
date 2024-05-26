@@ -1,0 +1,73 @@
+.hero-section {
+    margin: 0 126px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+.hero-section .hero-text p{
+    width: 500px;
+    margin-top: 12px;
+}
+// ****************************** Second Section******************************************
+.our-initiatives {
+      margin:  126px;
+    display: flex;
+    flex-direction: column;
+}
+.our-initiatives h1 {
+    margin-bottom: 50px;
+}
+.ini-container {
+    display: grid;
+    grid-auto-columns: 1fr 1.5fr;
+    grid-auto-flow: column;  
+}
+.intiative-contents {
+    display: flex;
+    align-items: center
+}
+
+.single-intiative-content {
+    padding: 0 35px;
+    width: 70%
+}
+.single-intiative-content img{
+    transform: scale(0.8);
+}
+.intiative-content h3 {
+    color: $dark-color;
+    margin-bottom: 10px;  
+}
+.intiative-content p{
+    color: $dark-color;
+    line-height: 31px;
+
+}
+
+.roles-grid {
+    display: grid;
+    grid-auto-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+    grid-auto-flow: column;
+    margin: 0 126px ;
+}
+.role-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 230px;
+    gap: 10px;
+    padding: 75px 25px;
+    border: 2px solid $primary-color;
+    border-radius: 21px;
+}
+.role-item p {
+    text-align: center;
+}
+.role-item:hover {
+    background-color: $primary-color;
+    color: $background-color;
+    transform: scale(1.1);
+    transition: 90ms ease-in-out
+}

@@ -2,6 +2,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import article_cover_item from "../IMGS/articles-covers/article-cover-01.jpg";
+import book_cover_item from "../IMGS/articles-covers/Book-cover-01.jpg";
 
 const Ressource = ({ path, data }) => {
     console.log(data); // This should now log the data passed from Educational
@@ -46,13 +47,13 @@ const Ressource = ({ path, data }) => {
                         return (
                             <div key={resource.id} className="book-item">
                             <div className="book-item-cover">
-                                <img src={resource.image} alt="Book cover" className="book-item-cover-img" />
+                                <img src={book_cover_item} alt="Book cover" className="book-item-cover-img" />
                             </div>
                             <div className="book-item-content">
-                                <h3>{resource.title}</h3>
-                                <p>{resource.publication_date}</p>
-                                <p>{resource.description}</p>
-                                <p>Written by <span>{resource.author}</span></p>
+                                <h5>{resource.title}</h5>
+                                <p>By <span className='book-author'>{resource.author}</span></p>
+                                <p className='book-date-pub'>{resource.publication_date}</p>
+                                <button className='download-ress'>Download</button>
                             </div>
                             </div>
                         );

@@ -80,13 +80,22 @@ button {
 }
 
 .btn-primary {
-  background-color: #0EC277;
+  background-color: #10f394;
   color: white;
   border-radius: 50px;
   padding: 12px 36px;
   margin-top: 24px;
   font-size: 20px;
   font-weight: 700;
+}
+
+.download-ress {
+  color: #10f394;
+  border-radius: 50px;
+  padding: 12px 36px;
+  margin-top: 24px;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .loading-block {
@@ -207,7 +216,7 @@ nav {
   width: 230px;
   gap: 10px;
   padding: 75px 25px;
-  border: 2px solid #0EC277;
+  border: 2px solid #10f394;
   border-radius: 21px;
 }
 
@@ -216,7 +225,7 @@ nav {
 }
 
 .role-item:hover {
-  background-color: #0EC277;
+  background-color: #10f394;
   color: #FCFCFC;
   transform: scale(1.1);
   transition: 90ms ease-in-out;
@@ -228,7 +237,7 @@ nav {
 }
 
 .edu-content {
-  width: 70%;
+  width: 100%;
 }
 
 .edu-links {
@@ -250,7 +259,7 @@ nav {
 }
 
 .edu-link.active {
-  border-bottom-color: #0EC277;
+  border-bottom-color: #10f394;
 }
 
 .edu-link:last-child {
@@ -266,6 +275,41 @@ nav {
 
 .article-item-cover img {
   width: 150px;
+}
+
+.books-list {
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 45px;
+}
+
+.book-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.book-item-content h5 {
+  text-align: center;
+}
+
+.book-date-pub {
+  font-size: 0.875rem;
+}
+
+.book-item-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-author {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 /*# sourceMappingURL=main.css.map */

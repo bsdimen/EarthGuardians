@@ -39,6 +39,51 @@
       "image": "https://example.com/book2_image.jpg"
     },
     {
+      "id": 2,
+      "type": "book",
+      "title": "The Sixth Extinction: An Unnatural History",
+      "author": "Elizabeth Kolbert",
+      "publication_date": "2014-02-11",
+      "description": "A non-fiction book about mass extinction events and their impact on biodiversity.",
+      "image": "https://example.com/book2_image.jpg"
+    },
+    {
+      "id": 2,
+      "type": "book",
+      "title": "The Sixth Extinction: An Unnatural History",
+      "author": "Elizabeth Kolbert",
+      "publication_date": "2014-02-11",
+      "description": "A non-fiction book about mass extinction events and their impact on biodiversity.",
+      "image": "https://example.com/book2_image.jpg"
+    },
+    {
+      "id": 2,
+      "type": "book",
+      "title": "The Sixth Extinction: An Unnatural History",
+      "author": "Elizabeth Kolbert",
+      "publication_date": "2014-02-11",
+      "description": "A non-fiction book about mass extinction events and their impact on biodiversity.",
+      "image": "https://example.com/book2_image.jpg"
+    },
+    {
+      "id": 2,
+      "type": "book",
+      "title": "The Sixth Extinction: An Unnatural History",
+      "author": "Elizabeth Kolbert",
+      "publication_date": "2014-02-11",
+      "description": "A non-fiction book about mass extinction events and their impact on biodiversity.",
+      "image": "https://example.com/book2_image.jpg"
+    },
+    {
+      "id": 2,
+      "type": "book",
+      "title": "The Sixth Extinction: An Unnatural History",
+      "author": "Elizabeth Kolbert",
+      "publication_date": "2014-02-11",
+      "description": "A non-fiction book about mass extinction events and their impact on biodiversity.",
+      "image": "https://example.com/book2_image.jpg"
+    },
+    {
       "id": 1,
       "type": "documentary",
       "title": "Before the Flood",

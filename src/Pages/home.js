@@ -1,6 +1,7 @@
 import Header from '../Components/RootLayout';
-import heroImg from '../IMGS/hero-section-img.svg';
+import heroImg from '../IMGS/hero-section-img.jpg';
 import Iconinit from '../IMGS/Icons/climate-change-icon.svg';
+import linesImg from '../IMGS/lines-img.jpg';
 
 
 export default function Home () {
@@ -8,7 +9,7 @@ export default function Home () {
         <div className="Home">
         <section className="container hero-section">
             <div className="hero-text">
-                <h1>Welcome to Our Environmental Protection Hub</h1>
+                <h1>Welcome to Our <span>Environmental <img src={linesImg} /></span> Protection Hub</h1>
                 <p>At EarthGuardians, we are committed to safeguarding our planet and promoting sustainable living practices. Our mission is to raise awareness about environmental issues, advocate for policy changes, and empower individuals and communities to take action towards a healthier, more sustainable future
                 </p>
                 <button className="btn-primary">Get Started</button>

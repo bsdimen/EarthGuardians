@@ -1,4 +1,4 @@
-import  './CSS/main.css';
+
 import logo from './IMGS/EarthGuardians.svg';
 
 import { BrowserRouter, Routes, Route, Link, NavLink, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';

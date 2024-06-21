@@ -13,6 +13,7 @@ const RootLayout = () => {
                <NavLink to="Blog">Blog</NavLink>
                <NavLink to="educational">Educational Ressources</NavLink>
                <NavLink to="Contact">Contact us</NavLink>
+               <NavLink to="NewsLetter">Join our newsletter</NavLink>
             </nav>
             </header>
             <main>

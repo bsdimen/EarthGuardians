@@ -6,7 +6,7 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 45px;
   line-height: 1.5;
   font-family: Mada, serif;
 }
@@ -61,6 +61,10 @@ button {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0 44px;
+}
+
 a {
   text-decoration: none;
   color: #222222;
@@ -80,7 +84,7 @@ button {
 }
 
 .btn-primary {
-  background-color: #10f394;
+  background-color: #C042EC;
   color: white;
   border-radius: 50px;
   padding: 12px 36px;
@@ -130,7 +134,7 @@ button {
   }
 }
 header {
-  padding: 84px 126px;
+  padding: 84px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -149,7 +153,6 @@ nav {
 }
 
 .hero-section {
-  margin: 0 126px;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -162,7 +165,6 @@ nav {
 }
 
 .our-initiatives {
-  margin: 126px;
   display: flex;
   flex-direction: column;
 }
@@ -206,7 +208,6 @@ nav {
   grid-auto-columns: repeat(4, 1fr);
   grid-gap: 30px;
   grid-auto-flow: column;
-  margin: 0 126px;
 }
 
 .role-item {
@@ -233,7 +234,6 @@ nav {
 
 .educational {
   padding-block: 25px;
-  margin: 0 126px;
 }
 
 .edu-content {

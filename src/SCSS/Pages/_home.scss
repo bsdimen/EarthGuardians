@@ -1,23 +1,43 @@
 .hero-section {
-    margin: 0 126px;
     display: flex;
-    justify-content: space-around;
     flex-direction: row;
     align-items: center;
+    .hero-text {
+        background-color: $background-color;
+        padding: 42px 32px;
+        border-radius: 40px;
+        width: 65%;
+        span {
+            position: relative;
+            img {
+                position: absolute;
+                left: 0%;
+            }
+        }
+        p{
+            width: 100%;
+            margin-top: 12px;
+        }
+    }
+    .hero-img {
+        width: 50%;
+        img {
+            width: 100%;
+        }
+    }
 }
-.hero-section .hero-text p{
-    width: 500px;
-    margin-top: 12px;
-}
+
+
+
 // ****************************** Second Section******************************************
 .our-initiatives {
-      margin:  126px;
     display: flex;
     flex-direction: column;
+    h1 {
+        margin-bottom: 50px;
+    }
 }
-.our-initiatives h1 {
-    margin-bottom: 50px;
-}
+
 .ini-container {
     display: grid;
     grid-auto-columns: 1fr 1.5fr;
@@ -50,7 +70,7 @@
     grid-auto-columns: repeat(4, 1fr);
     grid-gap: 30px;
     grid-auto-flow: column;
-    margin: 0 126px ;
+ 
 }
 .role-item {
     display: flex;

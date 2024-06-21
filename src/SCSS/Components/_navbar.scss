@@ -1,16 +1,21 @@
 
 header {
-    padding: 84px 126px;
+    margin: 42px 0 24px;
+    padding: 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: $background-color;
+    border-radius: 24px;
+    a {
+        margin-right: 42px;
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+    }
 }
 
-header a {
-    margin-right: 42px;
-    font-size: 18px;
-    font-weight: 500;
-}
 nav {
     display: flex;
     flex-direction: row;

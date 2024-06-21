@@ -9,10 +9,10 @@ $font-size-small: 0.875rem; // 14px
 
 // Line Heights
 $line-height-base: 1.5;
-$line-height-heading: 1.5;
+$line-height-heading: 1.2;
 
 // Headings
-$h1-font-size: 2.5rem; // 40px
+$h1-font-size: 45px; // 40px
 $h2-font-size: 2rem; // 32px
 $h3-font-size: 1.5rem; // 28px
 $h4-font-size: 1.5rem; // 24px
@@ -24,6 +24,7 @@ body {
   font-family: $font-family;
   font-size: $font-size-base;
   line-height: $line-height-base;
+  
 }
 
 h1 {

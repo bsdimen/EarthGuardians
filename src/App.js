@@ -9,7 +9,7 @@ import About from './Pages/about'
 import Blog from './Pages/blog'
 import Contact from './Pages/contact'
 import Educational from './Pages/educational'
-import RootLayout from './Components/RootLayout';
+import RootLayout from './Components/ui/RootLayout';
 
 const router = createBrowserRouter(
     createRoutesFromElements(

@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Mada:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+body {
+  font-family: Mada, serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 45px;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+h5 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.2;
+  font-family: Mada, serif;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+button {
+  font-family: Mada, serif;
+}
+
+.hero-section p {
+  line-height: 33px;
+  font-size: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 44px;
+  background-color: #FAFAFA;
+}
+
+a {
+  text-decoration: none;
+  color: #222222;
+}
+
+ul {
+  list-style: none;
+}
+
+a:hover {
+  color: #222222;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+.btn-primary {
+  background-color: #C042EC;
+  color: white;
+  border-radius: 50px;
+  padding: 12px 36px;
+  margin-top: 24px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.btn-shadow {
+  color: #C042EC;
+  font-weight: 700;
+  border: 4px solid #C042EC;
+  border-radius: 50px;
+  padding: 8px 24px;
+}
+
+.download-ress {
+  color: #66B407;
+  border-radius: 50px;
+  padding: 12px 36px;
+  margin-top: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.container {
+  padding: 0 44px;
+}
+
+.loading-block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.circle {
+  width: 0%;
+  padding: 19px 45px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  animation: downloadProgress 10s linear 1;
+}
+
+@keyframes downloadProgress {
+  from {
+    border: none;
+  }
+  to {
+    border: 2px solid #0EC277;
+  }
+}
+header {
+  margin: 42px 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header a {
+  margin-right: 42px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+header .nav-links {
+  padding: 32px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FAFAFA;
+  width: 100%;
+  margin-right: 12px;
+  z-index: 1000;
+}
+header .search {
+  height: inherit;
+  background-color: rgba(217, 217, 217, 0.5019607843);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #fff;
+  padding-right: 12px;
+  z-index: 1000;
+}
+header .search input {
+  padding: 32px 0 32px 12px;
+  border: none;
+  background-color: transparent;
+}
+header .search input::placeholder {
+  font-size: 18px;
+  font-weight: 500;
+  color: #303030;
+  font-family: "Mada";
+}
+header .search input:focus {
+  border: none;
+  outline: none;
+  background-color: #FAFAFA;
+  color: #303030;
+}
+header .search input:focus :placeholder {
+  display: none;
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.hero-section .Slides {
+  color: #0c0c0c;
+  display: flex;
+  flex-direction: column;
+}
+.hero-section .Slides .slide {
+  padding-block: 25px;
+  display: grid;
+  grid-template-columns: 2.4fr 3fr;
+  grid-row: 1;
+}
+.hero-section .Slides .slide .slide-content {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.hero-section .Slides .slide .slide-content.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 1s ease, opacity 0.5s ease;
+}
+.hero-section .Slides .slide .content h1 {
+  font-family: "Source Serif 4";
+  margin-bottom: 24px;
+}
+.hero-section .Slides .slide .content p {
+  font-family: "Mada";
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 35px;
+}
+.hero-section .Slides .slide .content .cta-btn {
+  padding: 20px 18px;
+  background-color: #C042EC;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+.hero-section .Slides .slide .content-stati {
+  display: flex;
+  flex-direction: row;
+  padding: 35px 30px;
+  justify-content: space-between;
+  background-color: #ececec;
+  margin-top: 18px;
+}
+.hero-section .Slides .slide .content-stati h3 {
+  font-family: "Mada";
+}
+.hero-section .Slides .slide .content-stati span {
+  font-family: "Mada";
+  font-size: 20px;
+  display: block;
+}
+.hero-section .Slides .slide-image {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 44px;
+  width: 50%;
+  height: 100vh;
+  position: absolute;
+  top: -100vh;
+  right: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.hero-section .Slides .slide-image .numbers .n01, .hero-section .Slides .slide-image .numbers .n02, .hero-section .Slides .slide-image .numbers .n03 {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  margin-right: 80px;
+  background-color: #C042EC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.hero-section .Slides .slide-image .numbers .n01 :hover, .hero-section .Slides .slide-image .numbers .n02 :hover, .hero-section .Slides .slide-image .numbers .n03 :hover {
+  cursor: pointer;
+}
+.hero-section .Slides .slide-image.active {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(0);
+  opacity: 1;
+}
+.hero-section .Slides .i01 {
+  background-image: linear-gradient(rgba(231, 231, 231, 0.15), rgba(231, 231, 231, 0.15)), url("../../IMGS/pexels-lukas-rodriguez-1845331-3573351.jpg");
+  background-size: cover;
+}
+.hero-section .Slides .i02 {
+  background-image: linear-gradient(rgba(231, 231, 231, 0.15), rgba(231, 231, 231, 0.15)), url("../../IMGS/pexels-jplenio-2566845.jpg");
+  background-size: cover;
+}
+.hero-section .Slides .i03 {
+  background-image: linear-gradient(rgba(231, 231, 231, 0.2), rgba(231, 231, 231, 0.2)), url("../../IMGS/pexels-tomfisk-3815299.jpg");
+  background-size: cover;
+}
+
+.educational {
+  padding-block: 25px;
+}
+
+.edu-content {
+  width: 100%;
+}
+
+.edu-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: 35px;
+}
+
+.edu-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 25px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  width: 100%;
+  border-bottom: 2px solid #F4F4F4;
+}
+
+.edu-link.active {
+  border-bottom-color: #66B407;
+}
+
+.edu-link:last-child {
+  border-right: none;
+}
+
+.article-item {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-row: 1;
+  margin-bottom: 25px;
+}
+
+.article-item-cover img {
+  width: 150px;
+}
+
+.books-list {
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 45px;
+}
+
+.book-item-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.book-item-content h5 {
+  text-align: center;
+}
+
+.book-date-pub {
+  font-size: 0.875rem;
+}
+
+.book-item-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-author {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=main.css.map */

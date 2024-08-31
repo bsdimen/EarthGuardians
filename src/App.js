@@ -1,34 +1,77 @@
+import React, { Suspense, lazy } from 'react';
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import Loader from './Pages/loader';
+import Root from './Pages/root';
 
-import logo from './IMGS/EarthGuardians.svg';
+//========== Pages ==============
+const Home = lazy(() => import('./Pages/home'));
+const About = lazy(() => import('./Pages/about'));
+const Blog = lazy(() => import('./Pages/blog'));
+const Contact = lazy(() => import('./Pages/contact'));
+const Educational = lazy(() => import('./Pages/educational'));
 
-import { BrowserRouter, Routes, Route, Link, NavLink, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
-
-//===========Pages==============
-import Home from './Pages/home'
-import About from './Pages/about'
-import Blog from './Pages/blog'
-import Contact from './Pages/contact'
-import Educational from './Pages/educational'
-import RootLayout from './Components/ui/RootLayout';
 
 const router = createBrowserRouter(
-    createRoutesFromElements(
-        <Route path="/" element={<RootLayout />}>
-            <Route index element={<Home />}/>
-            <Route path="about" element={<About />}/>
-            <Route path="blog" element={<Blog />}/>
-            <Route path="contact" element={<Contact />}/>
-            <Route path='educational' element={<Educational />} />
-        </Route>
-    )
-)
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route
+        index
+        element={
+          <Suspense fallback={<Loader />}>
+            <Home />
+          </Suspense>
+        }
+      />
+      <Route
+        path="about"
+        element={
+          <Suspense fallback={<Loader />}>
+            <About />
+          </Suspense>
+        }
+      />
+      <Route
+        path="blog"
+        element={
+          <Suspense fallback={<Loader />}>
+            <Blog />
+          </Suspense>
+        }
+      />
+      <Route
+        path="contact"
+        element={
+          <Suspense fallback={<Loader />}>
+            <Contact />
+          </Suspense>
+        }
+      />
+      <Route
+        path="educational"
+        element={
+          <Suspense fallback={<Loader />}>
+            <Educational />
+          </Suspense>
+        }
+      />
+       <Route path="loader"
+    element={
+      <Suspense fallback={<Loader />}>
+        <Loader />
+      </Suspense>
+    }/>
+   
+    </Route>
+   
 
+  )
+);
 
 function App() {
   return (
     <RouterProvider router={router} />
-   
   );
 }
 
 export default App;
+

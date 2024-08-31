@@ -1,0 +1,252 @@
+.hero-aria-about {
+    height: 80vh;
+    background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+    background-size: cover;
+    width: 100%;
+    padding: 15px 45px;
+
+    .hero-aria-about-content {
+        color: #fff;
+        text-align: center;
+        margin-top: 70px;
+
+        h1,
+        h2 {
+            font-family: "Source Serif 4";
+        }
+
+    }
+}
+
+.about-content {
+    .mission-section {
+        padding-block: 65px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+
+        .mission-section-content {
+            width: 900px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-row: 1;
+
+            h2 {
+                font-family: "Source Serif 4";
+                position: relative;
+            }
+
+            h2::after {
+                content: " ";
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background-color: $primary-color;
+            }
+
+            p {
+                text-align: justify;
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .who-we-are-section {
+        padding: 65px 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-row: 1;
+        gap: -50px;
+
+        .who-we-are-section-content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .who-we-are-section-img {
+            img {
+                width: 500px;
+            }
+        }
+
+    }
+
+    .what-we-do-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        padding-block: 65px;
+
+        .what-we-do-section-content {
+            display: flex;
+            flex-direction: column;
+            width: 900px;
+
+            .what-we-do-section-heading {
+                padding-block: 30px;
+            }
+
+            h2 {
+                font-family: "Source Serif 4";
+                position: relative;
+            }
+
+            h2::after {
+                content: " ";
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background-color: $primary-color;
+            }
+
+            ul {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                gap: 25px;
+
+                li {
+                    padding: 20px;
+                    background-color: $primary-color-light;
+                }
+            }
+        }
+    }
+
+    .vision-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-block: 65px;
+
+        .vision-section-wrapper {
+            display: grid;
+            grid-template-columns: 2fr 1.8fr;
+            grid-row: 1;
+            gap: 35px;
+            width: 900px;
+
+            h2 {
+                font-family: "Source Serif 4";
+                position: relative;
+            }
+
+            h2::after {
+                content: " ";
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background-color: $primary-color;
+            }
+
+            p {
+                margin-top: 25px;
+                text-align: justify;
+            }
+        }
+
+
+    }
+
+    .join-us-section {
+        background-color: $primary-color-light;
+        padding-block: 65px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+
+        .join-us-section-wrapper {
+            width: 900px;
+
+            h2 {
+                font-family: "Source Serif 4";
+                position: relative;
+            }
+
+            h2::after {
+                content: " ";
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background-color: $primary-color;
+            }
+
+            p {
+                margin-block: 25px;
+                text-align: justify;
+            }
+        }
+    }
+
+    .get-involved-section {
+        // background-color: $primary-color-light;
+        padding-block: 65px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+
+        .get-involved-section-wrapper {
+            width: 900px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            grid-row: 1;
+            gap: 85px;
+
+            h2 {
+                font-family: "Source Serif 4";
+                position: relative;
+            }
+
+            h2::after {
+                content: " ";
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background-color: $primary-color;
+            }
+
+            p {
+                margin-block: 25px;
+                text-align: justify;
+            }
+
+            .get-involved-links {
+                display: flex;
+                align-items: start;
+                justify-content: center;
+                flex-direction: column;
+                gap: 35px;
+
+                .get-involve-link {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: row;
+                    &:hover {
+                        color: $primary-color;
+                        text-decoration: underline;
+                    }
+                    img {
+                        transform: scale(0.5);
+                    }
+                }
+            }
+        }
+    }
+
+}

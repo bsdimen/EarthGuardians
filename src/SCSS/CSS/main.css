@@ -63,7 +63,6 @@ button {
 }
 
 body {
-  margin: 0 44px;
   background-color: #FAFAFA;
 }
 
@@ -88,7 +87,6 @@ button {
 .btn-primary {
   background-color: #C042EC;
   color: white;
-  border-radius: 50px;
   padding: 12px 36px;
   margin-top: 24px;
   font-size: 20px;
@@ -148,7 +146,7 @@ button {
   }
 }
 header {
-  margin: 42px 0 24px;
+  padding: 42px 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -386,6 +384,215 @@ header nav {
 .book-author {
   font-size: 1rem;
   font-weight: 500;
+}
+
+.hero-aria-about {
+  height: 80vh;
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+  background-size: cover;
+  width: 100%;
+  padding: 15px 45px;
+}
+.hero-aria-about .hero-aria-about-content {
+  color: #fff;
+  text-align: center;
+  margin-top: 70px;
+}
+.hero-aria-about .hero-aria-about-content h1,
+.hero-aria-about .hero-aria-about-content h2 {
+  font-family: "Source Serif 4";
+}
+
+.about-content .mission-section {
+  padding-block: 65px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+.about-content .mission-section .mission-section-content {
+  width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-row: 1;
+}
+.about-content .mission-section .mission-section-content h2 {
+  font-family: "Source Serif 4";
+  position: relative;
+}
+.about-content .mission-section .mission-section-content h2::after {
+  content: " ";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #66B407;
+}
+.about-content .mission-section .mission-section-content p {
+  text-align: justify;
+}
+.about-content .mission-section .mission-section-content p span {
+  font-weight: 700;
+}
+.about-content .who-we-are-section {
+  padding: 65px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 1;
+  gap: -50px;
+}
+.about-content .who-we-are-section .who-we-are-section-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+.about-content .who-we-are-section .who-we-are-section-img img {
+  width: 500px;
+}
+.about-content .what-we-do-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding-block: 65px;
+}
+.about-content .what-we-do-section .what-we-do-section-content {
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+}
+.about-content .what-we-do-section .what-we-do-section-content .what-we-do-section-heading {
+  padding-block: 30px;
+}
+.about-content .what-we-do-section .what-we-do-section-content h2 {
+  font-family: "Source Serif 4";
+  position: relative;
+}
+.about-content .what-we-do-section .what-we-do-section-content h2::after {
+  content: " ";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #66B407;
+}
+.about-content .what-we-do-section .what-we-do-section-content ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 25px;
+}
+.about-content .what-we-do-section .what-we-do-section-content ul li {
+  padding: 20px;
+  background-color: #e6facd;
+}
+.about-content .vision-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 65px;
+}
+.about-content .vision-section .vision-section-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1.8fr;
+  grid-row: 1;
+  gap: 35px;
+  width: 900px;
+}
+.about-content .vision-section .vision-section-wrapper h2 {
+  font-family: "Source Serif 4";
+  position: relative;
+}
+.about-content .vision-section .vision-section-wrapper h2::after {
+  content: " ";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #66B407;
+}
+.about-content .vision-section .vision-section-wrapper p {
+  margin-top: 25px;
+  text-align: justify;
+}
+.about-content .join-us-section {
+  background-color: #e6facd;
+  padding-block: 65px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+.about-content .join-us-section .join-us-section-wrapper {
+  width: 900px;
+}
+.about-content .join-us-section .join-us-section-wrapper h2 {
+  font-family: "Source Serif 4";
+  position: relative;
+}
+.about-content .join-us-section .join-us-section-wrapper h2::after {
+  content: " ";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #66B407;
+}
+.about-content .join-us-section .join-us-section-wrapper p {
+  margin-block: 25px;
+  text-align: justify;
+}
+.about-content .get-involved-section {
+  padding-block: 65px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+.about-content .get-involved-section .get-involved-section-wrapper {
+  width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  grid-row: 1;
+  gap: 85px;
+}
+.about-content .get-involved-section .get-involved-section-wrapper h2 {
+  font-family: "Source Serif 4";
+  position: relative;
+}
+.about-content .get-involved-section .get-involved-section-wrapper h2::after {
+  content: " ";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #66B407;
+}
+.about-content .get-involved-section .get-involved-section-wrapper p {
+  margin-block: 25px;
+  text-align: justify;
+}
+.about-content .get-involved-section .get-involved-section-wrapper .get-involved-links {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 35px;
+}
+.about-content .get-involved-section .get-involved-section-wrapper .get-involved-links .get-involve-link {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.about-content .get-involved-section .get-involved-section-wrapper .get-involved-links .get-involve-link:hover {
+  color: #66B407;
+  text-decoration: underline;
+}
+.about-content .get-involved-section .get-involved-section-wrapper .get-involved-links .get-involve-link img {
+  transform: scale(0.5);
 }
 
 /*# sourceMappingURL=main.css.map */

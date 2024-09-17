@@ -1,14 +1,14 @@
 
 
-import Carousel from "../Components/ui/Carousel"
-import NavBar from '../Components/ui/navBar';
+import Carousel from "../Components/Carousel"
+import Header from '../Components/header';
 
 
 export default function Home () {
     return (
         <section className="Home">
             <div className='hero-section'>
-                <NavBar />
+                <Header />
                         
             </div>
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import NavBar from '../Components/ui/navBar';
+import Header from '../Components/header';
 import visionImg from "../IMGS/our-vision.svg";
 import arrowIcon from "../IMGS/Icons/Icon-arrow-right.svg";
 import { motion } from 'framer-motion';
@@ -8,7 +8,7 @@ export default function About() {
     return (
         <div className="About">
             <div className="hero-aria-about">
-                <NavBar />
+                <Header />
                 <motion.div className='hero-aria-about-content'>
                     <h2>About</h2>
                     <h1>EarthGuardians</h1>
@@ -18,9 +18,9 @@ export default function About() {
             <div className="about-content">
                 <section className="mission-section">
                     <motion.div className='mission-section-content'
-                    initial = {{y: "400px", opacity: 0 }}
-                    animate= {{y: "0", opacity: 1 }}
-                    transition={{duration: 4}}
+                        initial={{ y: "400px", opacity: 0 }}
+                        animate={{ y: "0", opacity: 1 }}
+                        transition={{ duration: 4 }}
                     >
                         <div className='mission-section-heading'>
                             <h2>Our<br /> Mission</h2>

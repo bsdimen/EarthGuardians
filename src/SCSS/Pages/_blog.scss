@@ -1,0 +1,81 @@
+.Blog {
+    width: 100%;
+}
+
+.blog-container {
+    .blog-heading {
+        height: 70vh;
+        background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/gardener.jpg");
+        background-size: cover;
+        width: 100%;
+
+        .container {
+            text-align: center;
+
+            h1 {
+                font-family: $font-family-heading ;
+                position: relative;
+                margin-bottom: 30px;
+                color: $background-color;
+
+                &::after {
+                    content: " ";
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 180px;
+                    height: 3px;
+                    background-color: $primary-color;
+                }
+            }
+
+            p {
+                margin-top: 15px;
+                color: $background-color-dark;
+                font-weight: 200;
+            }
+        }
+    }
+
+    .blog-content {
+        .what-are-intreseted-section {
+            padding-block: 50px;
+            background-color: #fff;
+
+            h2 {
+                font-family: $font-family-heading;
+            }
+
+            .categories {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 50px;
+
+                .category-item {
+                    flex: 1 1 150px;
+                    height: 200px;
+                    overflow-y: hidden;
+                    border: solid 2px red;
+                    position: relative;
+
+                    .category-hover {
+                        position: absolute;
+                        background-color: #66B407;
+                        height: 200px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+
+                    }
+                }
+            }
+
+
+        }
+    }
+
+}

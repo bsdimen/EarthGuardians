@@ -1,12 +1,42 @@
-.btn-primary{
-    background-color: $accent-color;
+.btn-primary {
+    background-color: $background-color;
     color: #ffff;
-    padding:12px 36px;
+    padding: 12px 36px;
     margin-top: 24px;
     font-size: 20px;
-    font-weight: 700;
-    
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: attr(data-content);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: $accent-color;
+        color: $background-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(-.3rem, -.3rem);
+        transition: transform .2s cubic-bezier(.34, 1.56, .64, 1);
+
+    }
+
+    &:hover {
+
+        &::after {
+            transform: translate(0, 0);
+            ; // Move the ::after element to its original position on hover
+        }
+    }
+
+
+
 }
+
 .btn-shadow {
     color: $accent-color;
     font-weight: 700;
@@ -14,14 +44,35 @@
     border-radius: 50px;
     padding: 8px 24px;
 }
-.download-ress {
-    color: $primary-color;
-    border-radius: 50px;
-    padding:12px 36px;
-    margin-top: 24px;
-    font-size: $h6-font-size;
-    font-weight: 600;
-}
+
 .container {
-    padding: 0 44px;
+    max-width: 1200px;
+    width: 80%;
+}
+
+.center-h {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.center-v {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.animated-text {
+    position: relative;
+    width: fit-content;
+
+    .animated-bar {
+        content: "";
+        position: absolute;
+        top: 0%;
+        right: 0;
+        height: 45px;
+        width: 2px;
+        background-color: $primary-color;
+    }
 }

@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
-import Loader from './Pages/loader';
+import Loader from './Components/loader';
 import Root from './Pages/root';
 
 //========== Pages ==============
@@ -23,7 +23,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="about"
+        path="/about"
         element={
           <Suspense fallback={<Loader />}>
             <About />
@@ -31,7 +31,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="blog"
+        path="/blog"
         element={
           <Suspense fallback={<Loader />}>
             <Blog />
@@ -39,7 +39,7 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="contact"
+        path="/contact"
         element={
           <Suspense fallback={<Loader />}>
             <Contact />
@@ -47,22 +47,22 @@ const router = createBrowserRouter(
         }
       />
       <Route
-        path="educational"
+        path="/educational"
         element={
           <Suspense fallback={<Loader />}>
             <Educational />
           </Suspense>
         }
       />
-       <Route path="loader"
-    element={
-      <Suspense fallback={<Loader />}>
-        <Loader />
-      </Suspense>
-    }/>
-   
+      <Route path="loader"
+        element={
+          <Suspense fallback={<Loader />}>
+            <Loader />
+          </Suspense>
+        } />
+
     </Route>
-   
+
 
   )
 );

@@ -38,20 +38,7 @@ export default function Blog() {
 
                     <div className="latest-posts-section center-h center-v">
                         <div className="container">
-                            <div className="latest-post-carsoul">
-                                <div className="browse-articles">
-                                    <h4>See our more articles and browse</h4>
-                                    <button className="btn-primary" data-content="Browse more" >browse more</button>
-                                </div>
-                                <div className="posts-grid">
-                                    <Post />
-                                    <Post />
-                                    <Post />
-                                    <Post />
-                                    <Post />
-                                </div>
-                            </div>
-
+                            <BlogCarousel />
                         </div>
                     </div>
                 </div>
@@ -118,12 +105,12 @@ const Post = () => {
     </div>
 }
 
-const Icons = () => {
+const ArrowIcons = (direction) => {
     const [hoverRightIcon, setHoverRightIcon] = useState(false);
     const [hoverLeftIcon, setHoverLeftIcon] = useState(false);
 
-    return <div className="icons">
-        <motion.button
+    if (direction === "left") {
+        return <motion.button
             onMouseEnter={() => setHoverLeftIcon(true)}
             onMouseLeave={() => setHoverLeftIcon(false)}
             className="left">
@@ -134,7 +121,8 @@ const Icons = () => {
                 transition={{ duration: 0.2 }}
             ></motion.span>
         </motion.button>
-        <motion.button
+    } else {
+        return <motion.button
             onMouseEnter={() => setHoverRightIcon(true)}
             onMouseLeave={() => setHoverRightIcon(false)}
             className="right">
@@ -145,5 +133,71 @@ const Icons = () => {
                 transition={{ duration: 0.2 }}
             ></motion.span>
         </motion.button>
+    }
+
+}
+
+const BlogCarousel = () => {
+    const carouselRef = useRef();
+    const [isIconRightVisible, setIsIconRightVisible] = useState(true);
+    const [isIconLeftVisible, setIsIconLeftVisible] = useState(true);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (carouselRef.current) {
+                const scrollLeft = carouselRef.current.scrollLeft;
+                const scrollWidth = carouselRef.current.scrollWidth; // Total width of the scrollable content
+                const clientWidth = carouselRef.current.clientWidth; // Width of the visible area
+
+                setScrollPosition(scrollLeft);
+
+
+                // Check if at the start (scroll position is 0)
+                if (scrollLeft === 0) {
+                    // Do something when at the start
+                    console.log('Scrolled to the start');
+                }
+
+                // Check if at the end (scroll position is at the end)
+                if (scrollLeft + clientWidth >= scrollWidth) {
+                    // Do something when at the end
+                    console.log('Scrolled to the end');
+                }
+            }
+        };
+
+        const ref = carouselRef.current;
+        if (ref) {
+            // Add scroll event listener
+            ref.addEventListener('scroll', handleScroll);
+        }
+
+        // Cleanup the event listener when the component unmounts
+        return () => {
+            if (ref) {
+                ref.removeEventListener('scroll', handleScroll);
+            }
+        };
+
+    }, [])
+
+    return <div className="latest-post-carousel" ref={carouselRef}>
+        <div className="browse-articles">
+            <h4>See our more articles and browse</h4>
+            <button className="btn-primary" data-content="Browse more" >browse more</button>
+        </div>
+        <div className="posts-grid">
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+            <Post />
+        </div>
+        <div className="icons">
+            {isIconLeftVisible && <ArrowIcons direction="left" />}
+            {isIconRightVisible && <ArrowIcons direction="right" />}
+
+        </div>
     </div>
 }

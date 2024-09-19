@@ -726,13 +726,8 @@ header .nav-links nav .nav-link {
   height: 3px;
   background-color: #4E8905;
 }
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons .left,
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons .right {
+.blog-container .blog-content .latest-posts-section .latest-posts-heading .left,
+.blog-container .blog-content .latest-posts-section .latest-posts-heading .right {
   background-color: #C042EC;
   position: relative;
   cursor: pointer;
@@ -742,17 +737,17 @@ header .nav-links nav .nav-link {
   align-items: center;
   justify-content: center;
 }
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons .left svg,
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons .right svg {
+.blog-container .blog-content .latest-posts-section .latest-posts-heading .left svg,
+.blog-container .blog-content .latest-posts-section .latest-posts-heading .right svg {
   position: sticky;
   z-index: 2;
 }
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons .left svg path,
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons .right svg path {
+.blog-container .blog-content .latest-posts-section .latest-posts-heading .left svg path,
+.blog-container .blog-content .latest-posts-section .latest-posts-heading .right svg path {
   stroke: #FFFFFF;
 }
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons .left span,
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons .right span {
+.blog-container .blog-content .latest-posts-section .latest-posts-heading .left span,
+.blog-container .blog-content .latest-posts-section .latest-posts-heading .right span {
   position: absolute;
   top: 50%;
   right: 50%;
@@ -760,16 +755,17 @@ header .nav-links nav .nav-link {
   background-color: #FFFFFF;
   pointer-events: none;
 }
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons .left:hover svg path,
-.blog-container .blog-content .latest-posts-section .latest-posts-heading .icons .right:hover svg path {
+.blog-container .blog-content .latest-posts-section .latest-posts-heading .left:hover svg path,
+.blog-container .blog-content .latest-posts-section .latest-posts-heading .right:hover svg path {
   stroke: #C042EC;
 }
-.blog-container .blog-content .latest-posts-section .latest-post-carsoul {
+.blog-container .blog-content .latest-posts-section .latest-post-carousel {
   display: flex;
   flex-direction: row;
   gap: 30px;
+  overflow-x: scroll;
 }
-.blog-container .blog-content .latest-posts-section .latest-post-carsoul .browse-articles {
+.blog-container .blog-content .latest-posts-section .latest-post-carousel .browse-articles {
   flex-shrink: 0;
   width: 250px;
   height: 300px;
@@ -778,33 +774,32 @@ header .nav-links nav .nav-link {
   justify-content: center;
   flex-direction: column;
 }
-.blog-container .blog-content .latest-posts-section .latest-post-carsoul .posts-grid {
+.blog-container .blog-content .latest-posts-section .latest-post-carousel .posts-grid {
   display: flex;
   flex-direction: row;
   gap: 30px;
-  overflow-x: hidden;
 }
-.blog-container .blog-content .latest-posts-section .latest-post-carsoul .posts-grid > *:nth-child(1) {
+.blog-container .blog-content .latest-posts-section .latest-post-carousel .posts-grid > *:nth-child(1) {
   background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
 }
-.blog-container .blog-content .latest-posts-section .latest-post-carsoul .posts-grid > *:nth-child(2) {
+.blog-container .blog-content .latest-posts-section .latest-post-carousel .posts-grid > *:nth-child(2) {
   background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
 }
-.blog-container .blog-content .latest-posts-section .latest-post-carsoul .posts-grid > *:nth-child(3) {
+.blog-container .blog-content .latest-posts-section .latest-post-carousel .posts-grid > *:nth-child(3) {
   background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
 }
-.blog-container .blog-content .latest-posts-section .latest-post-carsoul .posts-grid > *:nth-child(4) {
+.blog-container .blog-content .latest-posts-section .latest-post-carousel .posts-grid > *:nth-child(4) {
   background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
 }
-.blog-container .blog-content .latest-posts-section .latest-post-carsoul .posts-grid > *:nth-child(5) {
+.blog-container .blog-content .latest-posts-section .latest-post-carousel .posts-grid > *:nth-child(5) {
   background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
 }
-.blog-container .blog-content .latest-posts-section .latest-post-carsoul .posts-grid .single-post {
+.blog-container .blog-content .latest-posts-section .latest-post-carousel .posts-grid .single-post {
   flex: 0 0 400px;
   display: flex;
   align-items: end;

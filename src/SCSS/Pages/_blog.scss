@@ -113,59 +113,57 @@
                     }
                 }
 
-                .icons {
+
+
+                .left,
+                .right {
+                    background-color: $accent-color;
+                    position: relative;
+                    cursor: pointer;
+                    height: 30px;
+                    width: 30px;
                     display: flex;
-                    flex-direction: row;
-                    gap: 10px;
+                    align-items: center;
+                    justify-content: center;
 
-                    .left,
-                    .right {
-                        background-color: $accent-color;
-                        position: relative;
-                        cursor: pointer;
-                        height: 30px;
-                        width: 30px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
+                    svg {
+                        position: sticky;
+                        z-index: 2;
 
+                        path {
+                            stroke: $background-color-light;
+                        }
+                    }
+
+                    span {
+                        position: absolute;
+                        top: 50%;
+                        right: 50%;
+                        transform: translate(50%, -50%);
+                        background-color: $background-color-light;
+                        pointer-events: none;
+                    }
+
+
+                    &:hover {
                         svg {
-                            position: sticky;
-                            z-index: 2;
-
                             path {
-                                stroke: $background-color-light;
-                            }
-                        }
+                                stroke: $accent-color;
 
-                        span {
-                            position: absolute;
-                            top: 50%;
-                            right: 50%;
-                            transform: translate(50%, -50%);
-                            background-color: $background-color-light;
-                            pointer-events: none;
-                        }
-
-
-                        &:hover {
-                            svg {
-                                path {
-                                    stroke: $accent-color;
-
-                                }
                             }
                         }
                     }
 
 
+
                 }
             }
 
-            .latest-post-carsoul {
+            .latest-post-carousel {
                 display: flex;
                 flex-direction: row;
                 gap: 30px;
+                overflow-x: scroll;
 
                 .browse-articles {
                     flex-shrink: 0;
@@ -181,7 +179,6 @@
                     display: flex;
                     flex-direction: row;
                     gap: 30px;
-                    overflow-x: hidden;
 
                     >*:nth-child(1) {
                         background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");

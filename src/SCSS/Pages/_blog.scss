@@ -139,6 +139,10 @@
                         align-items: start;
                         justify-content: center;
                         flex-direction: column;
+
+                        h4 {
+                            font-family: $font-family-heading;
+                        }
                     }
 
                     .posts-grid {
@@ -258,6 +262,44 @@
                 }
             }
 
+
+        }
+
+        .success-stories-section {
+            width: 100%;
+            padding-block: 30px;
+
+            .success-stories-content {
+                display: flex;
+                flex-direction: row;
+
+                .success-stories-heading {
+                    padding: 30px;
+                    background-color: $primary-color;
+                    color: $background-color;
+
+                    h5 {
+                        font-family: $font-family-heading;
+                        margin-bottom: 10px;
+                    }
+
+                    h4 {
+                        margin-bottom: 25px;
+                        font-weight: 500;
+                    }
+
+                    p {
+                        font-weight: 300;
+                        margin-bottom: 30px;
+                    }
+                }
+
+                .success-stories-img {
+                    width: 900px;
+                    background-image: url("../../IMGS/pexels-lukas-rodriguez-1845331-3573351.jpg");
+                    background-size: cover;
+                }
+            }
 
         }
     }

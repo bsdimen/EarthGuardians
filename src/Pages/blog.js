@@ -41,6 +41,15 @@ export default function Blog() {
                             <BlogCarousel />
                         </div>
                     </div>
+
+                    <div className="success-stories-section">
+                        <div className="success-stories-content">
+                            <div className="success-stories-img">
+                            </div>
+                            <SucessStoriesContent />
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div >
@@ -82,8 +91,8 @@ const Category = ({ title, parag }) => {
                 onMouseEnter={() => setIsBtnHovering(true)}
                 onMouseLeave={() => setIsBtnHovering(false)}
                 animate={IsBtnHovering ? { color: "#4E8905", borderColor: "#4E8905" } : { color: "#F5F5F5", borderColor: "#F5F5F5" }}
-                className="btn-shadow whtite relative">
-                See More
+                className="btn-shadow white relative">
+                <span>See More</span>
                 <motion.span
                     initial={{ width: "0", height: "0" }}
                     animate={IsBtnHovering ? { width: "100%", height: "100%" } : { width: "0", height: "0" }}
@@ -153,9 +162,6 @@ const ArrowIcons = ({ direction, carouselRef }) => {
         </motion.button>
     );
 };
-
-
-
 
 const BlogCarousel = () => {
     const carouselRef = useRef();
@@ -242,4 +248,29 @@ const BlogCarousel = () => {
 
         </div>
     </div>
+}
+
+const SucessStoriesContent = () => {
+    const [IsBtnHovering, setIsBtnHovering] = useState(false)
+
+
+    return (<div className="success-stories-heading">
+        <h5>Success Stories</h5>
+        <h4>Celebrating individuals and communities making a difference.</h4>
+        <h2>How One Community Reduced Its Carbon Footprint by 50%</h2>
+        <p>Discover the inspiring journey of a small town that implemented green initiatives and became a model for sustainable living.</p>
+        <motion.button
+            onMouseEnter={() => setIsBtnHovering(true)}
+            onMouseLeave={() => setIsBtnHovering(false)}
+            animate={IsBtnHovering ? { color: "#529500", borderColor: "#529500" } : { color: "#F5F5F5", borderColor: "#F5F5F5" }}
+            className="btn-shadow white relative">
+            <span>See More</span>
+            <motion.span
+                initial={{ width: "0", height: "0" }}
+                animate={IsBtnHovering ? { width: "100%", height: "100%" } : { width: "0", height: "0" }}
+                transition={{ duration: 0.2 }}
+                className="btn-animation"></motion.span>
+        </motion.button>
+    </div>)
+
 }

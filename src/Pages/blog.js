@@ -59,10 +59,8 @@ const Category = ({ title, parag }) => {
 
     useEffect(() => {
         const contentheight = contentRef.current.offsetHeight; // or getBoundingClientRect().height
-        console.log(`cHeight: ${contentheight}px`);
         setTop(-contentheight + 20);
 
-        console.log(`top: ${top}`);
     }, [contentRef]);
 
     return <motion.div
@@ -105,75 +103,102 @@ const Post = () => {
     </div>
 }
 
-const ArrowIcons = (direction) => {
+const ArrowIcons = ({ direction, carouselRef }) => {
     const [hoverRightIcon, setHoverRightIcon] = useState(false);
     const [hoverLeftIcon, setHoverLeftIcon] = useState(false);
 
-    if (direction === "left") {
-        return <motion.button
-            onMouseEnter={() => setHoverLeftIcon(true)}
-            onMouseLeave={() => setHoverLeftIcon(false)}
-            className="left">
-            <ArrowLeftIcon />
-            <motion.span
-                initial={{ width: "0", height: "0" }}
-                animate={hoverLeftIcon ? { width: "100%", height: "100%" } : { width: "0", height: "0" }}
-                transition={{ duration: 0.2 }}
-            ></motion.span>
-        </motion.button>
-    } else {
-        return <motion.button
-            onMouseEnter={() => setHoverRightIcon(true)}
-            onMouseLeave={() => setHoverRightIcon(false)}
-            className="right">
-            <ArrowRightIcon />
-            <motion.span
-                initial={{ width: "0", height: "0" }}
-                animate={hoverRightIcon ? { width: "150%", height: "150%" } : { width: "0", height: "0" }}
-                transition={{ duration: 0.2 }}
-            ></motion.span>
-        </motion.button>
-    }
 
-}
+    const scrollCarousel = (direction) => {
+        const scrollAmount = 400; // Adjust this value to control scroll distance
+        let newScroll
+
+        if (carouselRef.current) {
+            const currentScrollPosition = carouselRef.current.scrollLeft;
+            const scrollWidth = carouselRef.current.scrollWidth;
+            const clientWidth = carouselRef.current.clientWidth;
+
+
+
+            if (direction === 'left') {
+                newScroll = Math.max(0, currentScrollPosition - scrollAmount)
+            } else if (direction === 'right') {
+                newScroll = Math.min(scrollWidth - clientWidth, currentScrollPosition + scrollAmount)
+
+            }
+
+            console.log(newScroll)
+
+            carouselRef.current.scrollTo({
+                left: newScroll,
+                behavior: 'smooth' // Native smooth scrolling
+            });
+        }
+    };
+
+    return (
+        <motion.button
+            onMouseEnter={() => (direction === 'left' ? setHoverLeftIcon(true) : setHoverRightIcon(true))}
+            onMouseLeave={() => (direction === 'left' ? setHoverLeftIcon(false) : setHoverRightIcon(false))}
+            onClick={() => scrollCarousel(direction)} // Fix: passing function reference
+            className={direction === 'left' ? 'left' : 'right'}
+        >
+            {direction === 'left' ? <ArrowLeftIcon /> : <ArrowRightIcon />}
+
+            <motion.span
+                initial={{ width: '0', height: '0' }}
+                animate={direction === 'left' ? hoverLeftIcon ? { width: '100%', height: '100%' } : { width: '0', height: '0' } :
+                    hoverRightIcon ? { width: '100%', height: '100%' } : { width: '0', height: '0' }}
+                transition={{ duration: 0.2 }}
+            />
+        </motion.button>
+    );
+};
+
+
+
 
 const BlogCarousel = () => {
     const carouselRef = useRef();
     const [isIconRightVisible, setIsIconRightVisible] = useState(true);
-    const [isIconLeftVisible, setIsIconLeftVisible] = useState(true);
+    const [isIconLeftVisible, setIsIconLeftVisible] = useState(false);
+    const [scale, setScale] = useState(1);
     const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             if (carouselRef.current) {
                 const scrollLeft = carouselRef.current.scrollLeft;
-                const scrollWidth = carouselRef.current.scrollWidth; // Total width of the scrollable content
-                const clientWidth = carouselRef.current.clientWidth; // Width of the visible area
+                const scrollWidth = carouselRef.current.scrollWidth;
+                const clientWidth = carouselRef.current.clientWidth;
 
                 setScrollPosition(scrollLeft);
 
-
-                // Check if at the start (scroll position is 0)
                 if (scrollLeft === 0) {
-                    // Do something when at the start
-                    console.log('Scrolled to the start');
+                    setIsIconLeftVisible(false);
+                    setIsIconRightVisible(true);
+                    setScale(1); // Hide right arrow at the end
+                    // Hide left arrow at the start
                 }
 
-                // Check if at the end (scroll position is at the end)
-                if (scrollLeft + clientWidth >= scrollWidth) {
-                    // Do something when at the end
-                    console.log('Scrolled to the end');
+                else if (scrollLeft + clientWidth >= scrollWidth) {
+                    setIsIconRightVisible(false); // Hide right arrow at the end
+                    setIsIconLeftVisible(true);
+                    setScale(0);
+
+                } else {
+                    setIsIconLeftVisible(true);
+                    setIsIconRightVisible(true);
+                    setScale(0);
+
                 }
             }
         };
 
         const ref = carouselRef.current;
         if (ref) {
-            // Add scroll event listener
             ref.addEventListener('scroll', handleScroll);
         }
 
-        // Cleanup the event listener when the component unmounts
         return () => {
             if (ref) {
                 ref.removeEventListener('scroll', handleScroll);
@@ -182,21 +207,38 @@ const BlogCarousel = () => {
 
     }, [])
 
-    return <div className="latest-post-carousel" ref={carouselRef}>
-        <div className="browse-articles">
-            <h4>See our more articles and browse</h4>
-            <button className="btn-primary" data-content="Browse more" >browse more</button>
+    return <div className="latest-post-section" >
+        <div className="latest-post-carousel" ref={carouselRef}>
+            <motion.div
+                initial={{ scale: 1 }}
+                animate={{ scale }}
+                transition={{ duration: 0.2 }}
+                className="browse-articles">
+
+                <h4>See our more articles and browse</h4>
+                <button className="btn-primary" data-content="Browse more" >browse more</button>
+
+            </motion.div>
+            <div className="posts-grid">
+                <Post />
+                <Post />
+                <Post />
+                <Post />
+                <Post />
+            </div>
         </div>
-        <div className="posts-grid">
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-        </div>
+
         <div className="icons">
-            {isIconLeftVisible && <ArrowIcons direction="left" />}
-            {isIconRightVisible && <ArrowIcons direction="right" />}
+            {isIconLeftVisible && (
+                <div className="left-icon">
+                    <ArrowIcons direction="left" carouselRef={carouselRef} />
+                </div>
+            )}
+            {isIconRightVisible && (
+                <div className="right-icon">
+                    <ArrowIcons direction="right" carouselRef={carouselRef} />
+                </div>
+            )}
 
         </div>
     </div>

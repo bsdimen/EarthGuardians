@@ -28,7 +28,6 @@ export const AnimatedHeading = ({ text, Heading, className }) => {
         transition={{ duration: 2 }}
         aria-hidden
         className={"animated-text " + className}>
-        {console.log(chars)}
         {chars.map((char, index) => (
             <motion.span
                 initial="hidden"

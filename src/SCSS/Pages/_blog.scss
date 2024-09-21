@@ -115,16 +115,92 @@
 
 
 
+
+            }
+
+            .latest-post-section {
+                position: relative;
+
+                .latest-post-carousel {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 30px;
+                    overflow-x: scroll;
+
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    .browse-articles {
+                        flex-shrink: 0;
+                        width: 250px;
+                        height: 300px;
+                        display: flex;
+                        align-items: start;
+                        justify-content: center;
+                        flex-direction: column;
+                    }
+
+                    .posts-grid {
+                        display: flex;
+                        flex-direction: row;
+                        gap: 30px;
+
+                        >*:nth-child(1) {
+                            background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+                            background-size: cover;
+                        }
+
+                        >*:nth-child(2) {
+                            background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+                            background-size: cover;
+                        }
+
+                        >*:nth-child(3) {
+                            background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+                            background-size: cover;
+                        }
+
+                        >*:nth-child(4) {
+                            background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+                            background-size: cover;
+                        }
+
+                        >*:nth-child(5) {
+                            background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+                            background-size: cover;
+                        }
+
+
+                        .single-post {
+                            flex: 0 0 400px;
+                            display: flex;
+                            align-items: end;
+                            padding-block: 20px;
+                            width: 400px;
+                            height: 300px;
+                            color: $background-color-light;
+                        }
+
+                    }
+
+                }
+
                 .left,
                 .right {
-                    background-color: $accent-color;
+                    background-color: $accent-color; // This will apply your SCSS accent color variable
                     position: relative;
+                    /* Or absolute if you prefer */
+                    top: 50%;
                     cursor: pointer;
                     height: 30px;
                     width: 30px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    transform: translateY(-50%);
+                    /* Vertically center */
+                    z-index: 10;
 
                     svg {
                         position: sticky;
@@ -154,72 +230,35 @@
                         }
                     }
 
+                }
 
+                .left {
+                    left: 10px;
+                    /* Adjust the left positioning */
+                }
 
+                .right {
+                    right: 10px;
+                    /* Adjust the right positioning */
+                }
+
+                .left-icon,
+                .right-icon {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                .left-icon {
+                    left: 0;
+                }
+
+                .right-icon {
+                    right: 0;
                 }
             }
 
-            .latest-post-carousel {
-                display: flex;
-                flex-direction: row;
-                gap: 30px;
-                overflow-x: scroll;
 
-                .browse-articles {
-                    flex-shrink: 0;
-                    width: 250px;
-                    height: 300px;
-                    display: flex;
-                    align-items: start;
-                    justify-content: center;
-                    flex-direction: column;
-                }
-
-                .posts-grid {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 30px;
-
-                    >*:nth-child(1) {
-                        background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
-                        background-size: cover;
-                    }
-
-                    >*:nth-child(2) {
-                        background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
-                        background-size: cover;
-                    }
-
-                    >*:nth-child(3) {
-                        background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
-                        background-size: cover;
-                    }
-
-                    >*:nth-child(4) {
-                        background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
-                        background-size: cover;
-                    }
-
-                    >*:nth-child(5) {
-                        background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
-                        background-size: cover;
-                    }
-
-
-                    .single-post {
-                        flex: 0 0 400px;
-                        display: flex;
-                        align-items: end;
-                        padding-block: 20px;
-                        width: 400px;
-                        height: 300px;
-                        color: $background-color-light;
-                    }
-
-                }
-
-
-            }
         }
     }
 

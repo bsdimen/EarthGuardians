@@ -1,42 +1,66 @@
 .Blog {
     width: 100%;
-}
 
-.blog-container {
-    .blog-heading {
-        height: 80vh;
-        background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/gardener.jpg");
+    .hero-section {
+        background-image: linear-gradient(#30303069, #30303069);
         background-size: cover;
-        width: 100%;
+        position: relative;
 
-        .container {
-            text-align: center;
+        .blog-heading {
+            padding-block: 50px;
+            width: 100%;
 
-            h1 {
-                font-family: $font-family-heading ;
-                position: relative;
-                margin-bottom: 30px;
-                color: $background-color;
+            .container {
 
-                &::after {
-                    content: " ";
-                    position: absolute;
-                    bottom: -10px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 180px;
-                    height: 3px;
-                    background-color: $primary-color;
+                .video-background {
+                    height: 25vh;
+                    overflow: hidden;
+
+                    video {
+                        position: absolute;
+                        top: 0%;
+                        left: 0%;
+                        max-width: 100%;
+                        min-height: 100%;
+                        z-index: -1;
+
+                        object-fit: cover;
+                    }
                 }
-            }
 
-            p {
-                margin-top: 15px;
-                color: $background-color-dark;
-                font-weight: 200;
+                .content {
+                    width: 70%;
+
+                    h1 {
+                        font-family: $font-family-heading ;
+                        position: relative;
+                        margin-bottom: 30px;
+                        color: $background-color-dark;
+
+                        &::after {
+                            content: " ";
+                            position: absolute;
+                            bottom: -10px;
+                            left: 0;
+                            width: 100px;
+                            height: 3px;
+                            background-color: $primary-color;
+                        }
+                    }
+
+                    p {
+                        margin-top: 15px;
+                        color: $background-color-dark;
+                        font-weight: 200;
+                    }
+                }
             }
         }
     }
+}
+
+.blog-container {
+
 
     .blog-content {
         .what-are-intreseted-section {
@@ -61,7 +85,7 @@
 
                     overflow-y: hidden;
                     position: relative;
-                    background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/blog/categories/article-cover-01.jpg");
+                    background-image: linear-gradient(#30303069, #30303069), url("../../Assets/Imgs/categories/article-cover-01.jpg");
                     background-size: cover;
 
                     .category-info {
@@ -151,39 +175,63 @@
                         gap: 30px;
 
                         >*:nth-child(1) {
-                            background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+                            background-image: linear-gradient(#30303069, #30303069), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
                             background-size: cover;
                         }
 
                         >*:nth-child(2) {
-                            background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+                            background-image: linear-gradient(#30303069, #30303069), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
                             background-size: cover;
                         }
 
                         >*:nth-child(3) {
-                            background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+                            background-image: linear-gradient(#30303069, #30303069), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
                             background-size: cover;
                         }
 
                         >*:nth-child(4) {
-                            background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+                            background-image: linear-gradient(#30303069, #30303069), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
                             background-size: cover;
                         }
 
                         >*:nth-child(5) {
-                            background-image: linear-gradient(#30303069, #30303069), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+                            background-image: linear-gradient(#30303069, #30303069), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
                             background-size: cover;
                         }
 
 
                         .single-post {
-                            flex: 0 0 400px;
-                            display: flex;
-                            align-items: end;
-                            padding-block: 20px;
-                            width: 400px;
                             height: 300px;
-                            color: $background-color-light;
+                            overflow: hidden;
+                            position: relative;
+
+                            .single-post-content {
+                                display: flex;
+                                justify-content: end;
+                                flex-direction: column;
+                                padding-block: 20px;
+                                height: 300px;
+                                width: 400px;
+                            }
+
+                            .single-post-hovered {
+                                height: 300px;
+                                width: 400px;
+                                background-color: $primary-color;
+                                position: absolute;
+
+                                .time-to-read {
+                                    border: solid 1px $background-color;
+                                    width: fit-content;
+
+                                    h6 {
+                                        font-weight: 200;
+                                        padding: 8px 15px;
+                                        color: $background-color;
+                                    }
+                                }
+                            }
+
                         }
 
                     }
@@ -192,9 +240,8 @@
 
                 .left,
                 .right {
-                    background-color: $accent-color; // This will apply your SCSS accent color variable
+                    background-color: $primary-color;
                     position: relative;
-                    /* Or absolute if you prefer */
                     top: 50%;
                     cursor: pointer;
                     height: 30px;
@@ -228,7 +275,7 @@
                     &:hover {
                         svg {
                             path {
-                                stroke: $accent-color;
+                                stroke: $primary-color;
 
                             }
                         }
@@ -267,38 +314,41 @@
 
         .success-stories-section {
             width: 100%;
-            padding-block: 30px;
+
+            margin-top: 50px;
+            background-color: $primary-color;
 
             .success-stories-content {
-                display: flex;
-                flex-direction: row;
+                .container {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
 
-                .success-stories-heading {
-                    padding: 30px;
-                    background-color: $primary-color;
-                    color: $background-color;
+                    .success-stories-heading {
+                        background-color: $primary-color;
+                        color: $background-color;
+                        padding-block: 30px;
 
-                    h5 {
-                        font-family: $font-family-heading;
-                        margin-bottom: 10px;
+                        h5 {
+                            font-family: $font-family-heading;
+                            margin-bottom: 25px;
+                        }
+
+
+                        p {
+                            font-weight: 300;
+                            margin-top: 15px;
+                            margin-bottom: 30px;
+                        }
                     }
 
-                    h4 {
-                        margin-bottom: 25px;
-                        font-weight: 500;
-                    }
-
-                    p {
-                        font-weight: 300;
-                        margin-bottom: 30px;
+                    .success-stories-img {
+                        width: 50px;
+                        background-image: url("../../Assets/Imgs/pexels-lukas-rodriguez-1845331-3573351.jpg");
+                        background-size: cover;
                     }
                 }
 
-                .success-stories-img {
-                    width: 900px;
-                    background-image: url("../../IMGS/pexels-lukas-rodriguez-1845331-3573351.jpg");
-                    background-size: cover;
-                }
             }
 
         }

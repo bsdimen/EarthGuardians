@@ -4,6 +4,27 @@
     box-sizing: border-box;
 }
 
+html {
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: $accent-color-light;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: $accent-color-dark;
+    }
+}
+
 body {
     background-color: #FAFAFA;
 }

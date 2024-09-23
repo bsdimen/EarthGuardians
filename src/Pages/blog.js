@@ -1,26 +1,22 @@
 import Header from "../Components/header";
-import { motion } from "framer-motion";
+import { motion, transform, useInView } from "framer-motion";
 import { AnimatedHeading } from "../Components/prefabs"
 import { useRef, useState, useEffect } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "../Components/icons";
-
+import heroVideo from "../Assets/Videos/01.mp4"
 export default function Blog() {
+    const successSectionRef = useRef(null)
+    const isInView = useInView(successSectionRef)
 
 
     return (
         <div className="Blog">
-            <div className="center-h">
-                <Header />
+            <div className="hero-section center-h">
+                <Header color="white" />
+                <HeroSection />
 
             </div>
             <div className="blog-container">
-                <div className="blog-heading center-h center-v">
-                    <div className="container">
-                        <h1>Earth Guardians Blog: Stories, Insights, and Inspiration</h1>
-                        <p>Welcome to the Earth Guardians Blog! Dive into our latest posts where we explore real stories, share expert insights, and inspire action for a healthier planet. Stay informed and motivated as you journey with us toward a sustainable future.</p>
-                        <button className="btn-primary" data-content="See More">See More</button>
-                    </div>
-                </div>
                 <div className="blog-content">
                     <div className="what-are-intreseted-section  center-h center-v">
                         <div className="container">
@@ -42,11 +38,20 @@ export default function Blog() {
                         </div>
                     </div>
 
-                    <div className="success-stories-section">
-                        <div className="success-stories-content">
-                            <div className="success-stories-img">
+                    <div className="success-stories-section" ref={successSectionRef}>
+                        <div className="success-stories-content center-h center-v">
+                            <div className="container">
+                                <SucessStoriesContent />
+                                <motion.div
+                                    initial={{ width: 0 }}
+                                    animate={isInView ? { width: "200px" } : {}}
+                                    transition={{ duration: 0.8 }}
+                                    style={{ transformOrigin: '0 100%' }}
+                                    className="success-stories-img">
+                                </motion.div>
+                                <SucessStoriesContent />
                             </div>
-                            <SucessStoriesContent />
+
                         </div>
 
                     </div>
@@ -56,7 +61,35 @@ export default function Blog() {
 
     )
 }
+const HeroSection = () => {
+    const videoRef = useRef(null);
 
+    useEffect(() => {
+
+        if (videoRef.current) {
+            videoRef.current.muted = true;
+            videoRef.current.play().catch((error) => {
+                console.log("Autoplay prevented:", error.message);
+            });
+        }
+    }, []);
+
+    return (<div className="blog-heading center-h center-v">
+        <div className="container  center-v">
+            <div className="content">
+                <h1>Earth Guardians Blog: Stories, Insights, and Inspiration</h1>
+                <p>Welcome to the Earth Guardians Blog! Dive into our latest posts where we explore real stories, share expert insights, and inspire action for a healthier planet. Stay informed and motivated as you journey with us toward a sustainable future.</p>
+                <button className="btn-primary" data-content="See More">See More</button>
+            </div>
+            <figure class="video-background">
+                <video ref={videoRef} muted loop playsinline>
+                    <source src={heroVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </figure>
+        </div>
+    </div>)
+}
 const Category = ({ title, parag }) => {
 
     const [isItemHovering, setIsItemHovering] = useState(false)
@@ -90,7 +123,7 @@ const Category = ({ title, parag }) => {
             <motion.button
                 onMouseEnter={() => setIsBtnHovering(true)}
                 onMouseLeave={() => setIsBtnHovering(false)}
-                animate={IsBtnHovering ? { color: "#4E8905", borderColor: "#4E8905" } : { color: "#F5F5F5", borderColor: "#F5F5F5" }}
+                animate={IsBtnHovering ? { color: "#06a52e", borderColor: "#06a52e" } : { color: "#F5F5F5", borderColor: "#F5F5F5" }}
                 className="btn-shadow white relative">
                 <span>See More</span>
                 <motion.span
@@ -104,12 +137,46 @@ const Category = ({ title, parag }) => {
 }
 
 const Post = () => {
-    return <div className="single-post">
+    const [isPostHovering, setIsPostHovering] = useState(false)
+    const [IsBtnHovering, setIsBtnHovering] = useState(false)
+
+    return <motion.div
+        onMouseEnter={() => setIsPostHovering(true)}
+        onMouseLeave={() => setIsPostHovering(false)}
+        className="single-post">
+
         <div className="single-post-content">
             <h6>The Power of Collective Action: How Communities Can Save the Planet</h6>
             <p>Posted on September 15, 2024</p>
         </div>
-    </div>
+
+        <motion.div
+            initial={{ y: "100%" }}
+            animate={isPostHovering ? { y: `-300px` } : { y: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
+            className="single-post-hovered">
+
+            <div className="single-post-hovered-content">
+                <div className="time-to-read"><h6>4 min</h6></div>
+                <div className="heading">
+                    <h3>The Power of Collective Action: How Communities Can Save the Planet</h3>
+                    <p>The Power of Collective Action: How Communities Can Save the Planet</p>
+                    <motion.button
+                        onMouseEnter={() => setIsBtnHovering(true)}
+                        onMouseLeave={() => setIsBtnHovering(false)}
+                        animate={IsBtnHovering ? { color: "#06a52e", borderColor: "#06a52e" } : { color: "#F5F5F5", borderColor: "#F5F5F5" }}
+                        className="btn-shadow white relative">
+                        <span>See More</span>
+                        <motion.span
+                            initial={{ width: "0", height: "0" }}
+                            animate={IsBtnHovering ? { width: "100%", height: "100%" } : { width: "0", height: "0" }}
+                            transition={{ duration: 0.2 }}
+                            className="btn-animation"></motion.span>
+                    </motion.button>
+                </div>
+            </div>
+        </motion.div>
+    </motion.div>
 }
 
 const ArrowIcons = ({ direction, carouselRef }) => {
@@ -256,13 +323,12 @@ const SucessStoriesContent = () => {
 
     return (<div className="success-stories-heading">
         <h5>Success Stories</h5>
-        <h4>Celebrating individuals and communities making a difference.</h4>
         <h2>How One Community Reduced Its Carbon Footprint by 50%</h2>
         <p>Discover the inspiring journey of a small town that implemented green initiatives and became a model for sustainable living.</p>
         <motion.button
             onMouseEnter={() => setIsBtnHovering(true)}
             onMouseLeave={() => setIsBtnHovering(false)}
-            animate={IsBtnHovering ? { color: "#529500", borderColor: "#529500" } : { color: "#F5F5F5", borderColor: "#F5F5F5" }}
+            animate={IsBtnHovering ? { color: "#06a52e", borderColor: "#06a52e" } : { color: "#F5F5F5", borderColor: "#F5F5F5" }}
             className="btn-shadow white relative">
             <span>See More</span>
             <motion.span

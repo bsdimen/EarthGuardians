@@ -1,11 +1,11 @@
 .btn-primary {
-    background-color: $background-color;
-    border: solid 2px $accent-color;
+    background-color: $background-color-dark;
+    // border: solid 1px $accent-color;
     color: #ffff;
     padding: 10px 15px;
     margin-top: 24px;
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 500;
     cursor: pointer;
     position: relative;
 
@@ -52,6 +52,7 @@
 
     >span:first-of-type {
         position: sticky;
+        z-index: 2000;
     }
 }
 

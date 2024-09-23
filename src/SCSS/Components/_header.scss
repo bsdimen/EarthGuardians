@@ -1,5 +1,5 @@
 header {
-    padding: 50px 0;
+    padding: 30px 0;
 
     .nav-links {
         display: flex;
@@ -11,12 +11,17 @@ header {
         position: relative;
         font-weight: 500;
 
+        // Hide menu-lines by default for larger screens
         .menu-lines {
             background-color: #fff;
             padding: 20px;
-            border-radius: 50%;
             position: relative;
             cursor: pointer;
+            display: none; // Hidden by default
+
+            @media (max-width: 768px) {
+                display: block; // Show on small screens
+            }
 
             .menu-line {
                 position: absolute;
@@ -28,22 +33,64 @@ header {
 
         nav {
             display: flex;
+            flex-direction: row; // Row by default
+            align-items: center;
+            gap: 45px;
+
+            .nav-link {
+                font-weight: 500;
+                font-size: 16px;
+                padding: 8px 16px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $background-color-dark;
+
+
+                >span:first-of-type {
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2000;
+                }
+
+                >span:last-of-type {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    transform: translate(50%, 50%);
+                    background-color: $primary-color;
+                    transform: scale(0);
+                    z-index: 1000;
+                }
+
+                &.active {
+
+                    >span:last-of-type {
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+
+        // For small screens
+        @media (max-width: 768px) {
+            position: absolute;
             flex-direction: column;
             align-content: center;
-            gap: 45px;
-            position: absolute;
             top: 100px;
             right: 0;
             background-color: #fff;
             padding: 20px;
+            display: none; // Initially hidden
 
-            .nav-link {
-                font-weight: 500;
-                font-size: 25px;
-
+            &.open {
+                display: flex; // Show when the menu is open
             }
 
+            .nav-link {
+                font-size: 25px; // Larger font size for small screens
+            }
         }
     }
-
 }

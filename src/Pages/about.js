@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '../Components/header';
-import visionImg from "../IMGS/our-vision.svg";
-import arrowIcon from "../IMGS/Icons/Icon-arrow-right.svg";
+import visionImg from "../Assets/Imgs/SVG/our-vision.svg";
+import arrowIcon from "../Assets/Icons/Icon-arrow-right.svg";
 import { motion } from 'framer-motion';
 
 export default function About() {

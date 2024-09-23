@@ -62,6 +62,24 @@ button {
   box-sizing: border-box;
 }
 
+html {
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+html ::-webkit-scrollbar {
+  width: 5px;
+}
+html ::-webkit-scrollbar-track {
+  background: none;
+}
+html ::-webkit-scrollbar-thumb {
+  background: #E893FB;
+}
+html ::-webkit-scrollbar-thumb:hover {
+  background: #9A33BF;
+}
+
 body {
   background-color: #FAFAFA;
 }
@@ -85,13 +103,12 @@ button {
 }
 
 .btn-primary {
-  background-color: #F5F5F5;
-  border: solid 2px #C042EC;
+  background-color: #E0E0E0;
   color: white;
   padding: 10px 15px;
   margin-top: 24px;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
   cursor: pointer;
   position: relative;
 }
@@ -127,6 +144,7 @@ button {
 }
 .btn-shadow > span:first-of-type {
   position: sticky;
+  z-index: 2000;
 }
 
 .relative {
@@ -169,7 +187,7 @@ button {
   right: 0;
   height: 45px;
   width: 2px;
-  background-color: #529500;
+  background-color: #06a52e;
 }
 
 .loading-block {
@@ -204,7 +222,7 @@ button {
   }
 }
 header {
-  padding: 50px 0;
+  padding: 30px 0;
 }
 header .nav-links {
   display: flex;
@@ -219,30 +237,71 @@ header .nav-links {
 header .nav-links .menu-lines {
   background-color: #fff;
   padding: 20px;
-  border-radius: 50%;
   position: relative;
   cursor: pointer;
+  display: none;
+}
+@media (max-width: 768px) {
+  header .nav-links .menu-lines {
+    display: block;
+  }
 }
 header .nav-links .menu-lines .menu-line {
   position: absolute;
   width: 20px;
   height: 2px;
-  background-color: #529500;
+  background-color: #06a52e;
 }
 header .nav-links nav {
   display: flex;
-  flex-direction: column;
-  align-content: center;
+  flex-direction: row;
+  align-items: center;
   gap: 45px;
-  position: absolute;
-  top: 100px;
-  right: 0;
-  background-color: #fff;
-  padding: 20px;
 }
 header .nav-links nav .nav-link {
   font-weight: 500;
-  font-size: 25px;
+  font-size: 16px;
+  padding: 8px 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #E0E0E0;
+}
+header .nav-links nav .nav-link > span:first-of-type {
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+}
+header .nav-links nav .nav-link > span:last-of-type {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translate(50%, 50%);
+  background-color: #06a52e;
+  transform: scale(0);
+  z-index: 1000;
+}
+header .nav-links nav .nav-link.active > span:last-of-type {
+  transform: scale(1);
+}
+@media (max-width: 768px) {
+  header .nav-links {
+    position: absolute;
+    flex-direction: column;
+    align-content: center;
+    top: 100px;
+    right: 0;
+    background-color: #fff;
+    padding: 20px;
+    display: none;
+  }
+  header .nav-links.open {
+    display: flex;
+  }
+  header .nav-links .nav-link {
+    font-size: 25px;
+  }
 }
 
 .hero-section .Slides {
@@ -312,7 +371,9 @@ header .nav-links nav .nav-link {
   opacity: 0;
   transform: translateY(-100%);
 }
-.hero-section .Slides .slide-image .numbers .n01, .hero-section .Slides .slide-image .numbers .n02, .hero-section .Slides .slide-image .numbers .n03 {
+.hero-section .Slides .slide-image .numbers .n01,
+.hero-section .Slides .slide-image .numbers .n02,
+.hero-section .Slides .slide-image .numbers .n03 {
   width: 50px;
   height: 50px;
   margin-bottom: 20px;
@@ -323,7 +384,9 @@ header .nav-links nav .nav-link {
   align-items: center;
   color: #fff;
 }
-.hero-section .Slides .slide-image .numbers .n01 :hover, .hero-section .Slides .slide-image .numbers .n02 :hover, .hero-section .Slides .slide-image .numbers .n03 :hover {
+.hero-section .Slides .slide-image .numbers .n01 :hover,
+.hero-section .Slides .slide-image .numbers .n02 :hover,
+.hero-section .Slides .slide-image .numbers .n03 :hover {
   cursor: pointer;
 }
 .hero-section .Slides .slide-image.active {
@@ -334,15 +397,15 @@ header .nav-links nav .nav-link {
   opacity: 1;
 }
 .hero-section .Slides .i01 {
-  background-image: linear-gradient(rgba(231, 231, 231, 0.15), rgba(231, 231, 231, 0.15)), url("../../IMGS/pexels-lukas-rodriguez-1845331-3573351.jpg");
+  background-image: linear-gradient(rgba(231, 231, 231, 0.15), rgba(231, 231, 231, 0.15)), url("../../Assets/Imgs/pexels-jplenio-2566845.jpg");
   background-size: cover;
 }
 .hero-section .Slides .i02 {
-  background-image: linear-gradient(rgba(231, 231, 231, 0.15), rgba(231, 231, 231, 0.15)), url("../../IMGS/pexels-jplenio-2566845.jpg");
+  background-image: linear-gradient(rgba(231, 231, 231, 0.15), rgba(231, 231, 231, 0.15)), url("../../Assets/Imgs/pexels-jplenio-2566845.jpg");
   background-size: cover;
 }
 .hero-section .Slides .i03 {
-  background-image: linear-gradient(rgba(231, 231, 231, 0.2), rgba(231, 231, 231, 0.2)), url("../../IMGS/pexels-tomfisk-3815299.jpg");
+  background-image: linear-gradient(rgba(231, 231, 231, 0.2), rgba(231, 231, 231, 0.2)), url("../../Assets/Imgs/pexels-jplenio-2566845.jpg");
   background-size: cover;
 }
 
@@ -373,7 +436,7 @@ header .nav-links nav .nav-link {
 }
 
 .edu-link.active {
-  border-bottom-color: #529500;
+  border-bottom-color: #06a52e;
 }
 
 .edu-link:last-child {
@@ -428,7 +491,7 @@ header .nav-links nav .nav-link {
 
 .hero-aria-about {
   height: 80vh;
-  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
   width: 100%;
 }
@@ -465,7 +528,7 @@ header .nav-links nav .nav-link {
   left: 0;
   width: 50px;
   height: 3px;
-  background-color: #529500;
+  background-color: #06a52e;
 }
 .about-content .mission-section .mission-section-content p {
   text-align: justify;
@@ -515,7 +578,7 @@ header .nav-links nav .nav-link {
   left: 0;
   width: 50px;
   height: 3px;
-  background-color: #529500;
+  background-color: #06a52e;
 }
 .about-content .what-we-do-section .what-we-do-section-content ul {
   display: grid;
@@ -551,7 +614,7 @@ header .nav-links nav .nav-link {
   left: 0;
   width: 50px;
   height: 3px;
-  background-color: #529500;
+  background-color: #06a52e;
 }
 .about-content .vision-section .vision-section-wrapper p {
   margin-top: 25px;
@@ -578,7 +641,7 @@ header .nav-links nav .nav-link {
   left: 0;
   width: 50px;
   height: 3px;
-  background-color: #529500;
+  background-color: #06a52e;
 }
 .about-content .join-us-section .join-us-section-wrapper p {
   margin-block: 25px;
@@ -608,7 +671,7 @@ header .nav-links nav .nav-link {
   left: 0;
   width: 50px;
   height: 3px;
-  background-color: #529500;
+  background-color: #06a52e;
 }
 .about-content .get-involved-section .get-involved-section-wrapper p {
   margin-block: 25px;
@@ -627,7 +690,7 @@ header .nav-links nav .nav-link {
   flex-direction: row;
 }
 .about-content .get-involved-section .get-involved-section-wrapper .get-involved-links .get-involve-link:hover {
-  color: #529500;
+  color: #06a52e;
   text-decoration: underline;
 }
 .about-content .get-involved-section .get-involved-section-wrapper .get-involved-links .get-involve-link img {
@@ -637,37 +700,52 @@ header .nav-links nav .nav-link {
 .Blog {
   width: 100%;
 }
-
-.blog-container .blog-heading {
-  height: 80vh;
-  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/gardener.jpg");
+.Blog .hero-section {
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059));
   background-size: cover;
+  position: relative;
+}
+.Blog .hero-section .blog-heading {
+  padding-block: 50px;
   width: 100%;
 }
-.blog-container .blog-heading .container {
-  text-align: center;
+.Blog .hero-section .blog-heading .container .video-background {
+  height: 25vh;
+  overflow: hidden;
 }
-.blog-container .blog-heading .container h1 {
+.Blog .hero-section .blog-heading .container .video-background video {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  max-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+.Blog .hero-section .blog-heading .container .content {
+  width: 70%;
+}
+.Blog .hero-section .blog-heading .container .content h1 {
   font-family: "Source Serif 4", serif;
   position: relative;
   margin-bottom: 30px;
-  color: #F5F5F5;
+  color: #E0E0E0;
 }
-.blog-container .blog-heading .container h1::after {
+.Blog .hero-section .blog-heading .container .content h1::after {
   content: " ";
   position: absolute;
   bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 180px;
+  left: 0;
+  width: 100px;
   height: 3px;
-  background-color: #529500;
+  background-color: #06a52e;
 }
-.blog-container .blog-heading .container p {
+.Blog .hero-section .blog-heading .container .content p {
   margin-top: 15px;
   color: #E0E0E0;
   font-weight: 200;
 }
+
 .blog-container .blog-content .what-are-intreseted-section {
   padding-block: 50px;
   background-color: #fff;
@@ -688,7 +766,7 @@ header .nav-links nav .nav-link {
   height: 150px;
   overflow-y: hidden;
   position: relative;
-  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/blog/categories/article-cover-01.jpg");
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../Assets/Imgs/categories/article-cover-01.jpg");
   background-size: cover;
 }
 .blog-container .blog-content .what-are-intreseted-section .categories .category-item .category-info {
@@ -702,7 +780,7 @@ header .nav-links nav .nav-link {
 }
 .blog-container .blog-content .what-are-intreseted-section .categories .category-item .category-hover {
   position: absolute;
-  background-color: #529500;
+  background-color: #06a52e;
   height: 150px;
   display: flex;
   align-items: center;
@@ -726,7 +804,7 @@ header .nav-links nav .nav-link {
   left: 0;
   width: 50px;
   height: 3px;
-  background-color: #529500;
+  background-color: #06a52e;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section {
   position: relative;
@@ -758,39 +836,57 @@ header .nav-links nav .nav-link {
   gap: 30px;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid > *:nth-child(1) {
-  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid > *:nth-child(2) {
-  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid > *:nth-child(3) {
-  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid > *:nth-child(4) {
-  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid > *:nth-child(5) {
-  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../IMGS/kiki-wang-TOc_JldXOX8-unsplash.jpg");
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059)), url("../../Assets/Imgs/kiki-wang-TOc_JldXOX8-unsplash.jpg");
   background-size: cover;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid .single-post {
-  flex: 0 0 400px;
-  display: flex;
-  align-items: end;
-  padding-block: 20px;
-  width: 400px;
   height: 300px;
-  color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+}
+.blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid .single-post .single-post-content {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  padding-block: 20px;
+  height: 300px;
+  width: 400px;
+}
+.blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid .single-post .single-post-hovered {
+  height: 300px;
+  width: 400px;
+  background-color: #06a52e;
+  position: absolute;
+}
+.blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid .single-post .single-post-hovered .time-to-read {
+  border: solid 1px #F5F5F5;
+  width: fit-content;
+}
+.blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid .single-post .single-post-hovered .time-to-read h6 {
+  font-weight: 200;
+  padding: 8px 15px;
+  color: #F5F5F5;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .left,
 .blog-container .blog-content .latest-posts-section .latest-post-section .right {
-  background-color: #C042EC;
+  background-color: #06a52e;
   position: relative;
-  /* Or absolute if you prefer */
   top: 50%;
   cursor: pointer;
   height: 30px;
@@ -822,7 +918,7 @@ header .nav-links nav .nav-link {
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .left:hover svg path,
 .blog-container .blog-content .latest-posts-section .latest-post-section .right:hover svg path {
-  stroke: #C042EC;
+  stroke: #06a52e;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .left {
   left: 10px;
@@ -846,32 +942,31 @@ header .nav-links nav .nav-link {
 }
 .blog-container .blog-content .success-stories-section {
   width: 100%;
-  padding-block: 30px;
+  margin-top: 50px;
+  background-color: #06a52e;
 }
-.blog-container .blog-content .success-stories-section .success-stories-content {
+.blog-container .blog-content .success-stories-section .success-stories-content .container {
   display: flex;
   flex-direction: row;
+  gap: 20px;
 }
-.blog-container .blog-content .success-stories-section .success-stories-content .success-stories-heading {
-  padding: 30px;
-  background-color: #529500;
+.blog-container .blog-content .success-stories-section .success-stories-content .container .success-stories-heading {
+  background-color: #06a52e;
   color: #F5F5F5;
+  padding-block: 30px;
 }
-.blog-container .blog-content .success-stories-section .success-stories-content .success-stories-heading h5 {
+.blog-container .blog-content .success-stories-section .success-stories-content .container .success-stories-heading h5 {
   font-family: "Source Serif 4", serif;
-  margin-bottom: 10px;
-}
-.blog-container .blog-content .success-stories-section .success-stories-content .success-stories-heading h4 {
   margin-bottom: 25px;
-  font-weight: 500;
 }
-.blog-container .blog-content .success-stories-section .success-stories-content .success-stories-heading p {
+.blog-container .blog-content .success-stories-section .success-stories-content .container .success-stories-heading p {
   font-weight: 300;
+  margin-top: 15px;
   margin-bottom: 30px;
 }
-.blog-container .blog-content .success-stories-section .success-stories-content .success-stories-img {
-  width: 900px;
-  background-image: url("../../IMGS/pexels-lukas-rodriguez-1845331-3573351.jpg");
+.blog-container .blog-content .success-stories-section .success-stories-content .container .success-stories-img {
+  width: 50px;
+  background-image: url("../../Assets/Imgs/pexels-lukas-rodriguez-1845331-3573351.jpg");
   background-size: cover;
 }
 

@@ -212,23 +212,41 @@
                                 padding-block: 20px;
                                 height: 300px;
                                 width: 400px;
+                                color: $background-color;
+                                padding-inline: 20px;
+                                padding-block: 25px;
                             }
 
                             .single-post-hovered {
                                 height: 300px;
                                 width: 400px;
+                                padding: 20px;
                                 background-color: $primary-color;
+                                color: $background-color;
                                 position: absolute;
 
                                 .time-to-read {
                                     border: solid 1px $background-color;
                                     width: fit-content;
+                                    margin-bottom: 25px;
 
                                     h6 {
                                         font-weight: 200;
                                         padding: 8px 15px;
-                                        color: $background-color;
                                     }
+                                }
+
+                                .heading {
+                                    h3 {
+                                        font-size: 20px;
+                                    }
+
+                                    p {
+                                        margin-top: 10px;
+                                        margin-bottom: 50px;
+                                        font-size: 12px;
+                                    }
+
                                 }
                             }
 
@@ -250,7 +268,6 @@
                     align-items: center;
                     justify-content: center;
                     transform: translateY(-50%);
-                    /* Vertically center */
                     z-index: 10;
 
                     svg {
@@ -285,12 +302,10 @@
 
                 .left {
                     left: 10px;
-                    /* Adjust the left positioning */
                 }
 
                 .right {
                     right: 10px;
-                    /* Adjust the right positioning */
                 }
 
                 .left-icon,

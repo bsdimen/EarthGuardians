@@ -93,4 +93,10 @@ header {
             }
         }
     }
+
+    &.dark {
+        .nav-link {
+            color: $dark-color !important
+        }
+    }
 }

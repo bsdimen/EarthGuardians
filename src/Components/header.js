@@ -9,8 +9,8 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 const Header = ({ color }) => {
     return (
-        <header className='container'>
-            <div className='nav-links'>
+        <header className={`container ${color === "white" ? "" : "dark"}`} >
+            <div className="nav-links" >
                 {color === "white" ? <img src={logoWh} alt='logo' /> : <img src={logo} alt='logo' />}
 
                 <NavMenu />

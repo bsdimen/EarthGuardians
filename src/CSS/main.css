@@ -190,6 +190,45 @@ button {
   background-color: #06a52e;
 }
 
+.btn-inline {
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+}
+.btn-inline svg {
+  width: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+.btn-inline svg path {
+  stroke: #C042EC;
+}
+.btn-inline span {
+  position: relative;
+}
+.btn-inline span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #C042EC;
+  transition: width 0.4s ease-in-out;
+}
+.btn-inline:hover span {
+  position: relative;
+}
+.btn-inline:hover span::after {
+  width: 100%;
+}
+.btn-inline:hover svg {
+  transform: translateX(10px);
+}
+
 .loading-block {
   position: fixed;
   top: 0;
@@ -210,15 +249,14 @@ button {
   border-radius: 100%;
   display: flex;
   justify-content: center;
-  animation: downloadProgress 10s linear 1;
 }
 
-@keyframes downloadProgress {
-  from {
-    border: none;
+@keyframes timer-animation {
+  0% {
+    transform: rotate(0deg);
   }
-  to {
-    border: 2px solid #0EC277;
+  100% {
+    transform: rotate(360deg);
   }
 }
 header {
@@ -302,6 +340,9 @@ header .nav-links nav .nav-link.active > span:last-of-type {
   header .nav-links .nav-link {
     font-size: 25px;
   }
+}
+header.dark .nav-link {
+  color: #222222 !important;
 }
 
 .hero-section .Slides {
@@ -867,21 +908,34 @@ header .nav-links nav .nav-link.active > span:last-of-type {
   padding-block: 20px;
   height: 300px;
   width: 400px;
+  color: #F5F5F5;
+  padding-inline: 20px;
+  padding-block: 25px;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid .single-post .single-post-hovered {
   height: 300px;
   width: 400px;
+  padding: 20px;
   background-color: #06a52e;
+  color: #F5F5F5;
   position: absolute;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid .single-post .single-post-hovered .time-to-read {
   border: solid 1px #F5F5F5;
   width: fit-content;
+  margin-bottom: 25px;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid .single-post .single-post-hovered .time-to-read h6 {
   font-weight: 200;
   padding: 8px 15px;
-  color: #F5F5F5;
+}
+.blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid .single-post .single-post-hovered .heading h3 {
+  font-size: 20px;
+}
+.blog-container .blog-content .latest-posts-section .latest-post-section .latest-post-carousel .posts-grid .single-post .single-post-hovered .heading p {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-size: 12px;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .left,
 .blog-container .blog-content .latest-posts-section .latest-post-section .right {
@@ -895,7 +949,6 @@ header .nav-links nav .nav-link.active > span:last-of-type {
   align-items: center;
   justify-content: center;
   transform: translateY(-50%);
-  /* Vertically center */
   z-index: 10;
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .left svg,
@@ -922,11 +975,9 @@ header .nav-links nav .nav-link.active > span:last-of-type {
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .left {
   left: 10px;
-  /* Adjust the left positioning */
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .right {
   right: 10px;
-  /* Adjust the right positioning */
 }
 .blog-container .blog-content .latest-posts-section .latest-post-section .left-icon,
 .blog-container .blog-content .latest-posts-section .latest-post-section .right-icon {
@@ -968,6 +1019,79 @@ header .nav-links nav .nav-link.active > span:last-of-type {
   width: 50px;
   background-image: url("../../Assets/Imgs/pexels-lukas-rodriguez-1845331-3573351.jpg");
   background-size: cover;
+}
+
+.Article .article-container .article-hero {
+  position: relative;
+}
+.Article .article-container .article-hero .article-hero-img {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+}
+.Article .article-container .article-hero .article-hero-img img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.Article .article-container .article-hero .article-hero-title {
+  padding: 20px;
+  background-color: #F5F5F5;
+  width: fit-content;
+  position: absolute;
+  bottom: -10%;
+  left: 5%;
+}
+.Article .article-container .article-hero .article-hero-time-to-read {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #06a52e;
+  border: solid 2px #F5F5F5;
+  padding: 10px;
+  color: #F5F5F5;
+}
+.Article .article-container .article-hero .article-hero-time-to-read svg path {
+  stroke: #F5F5F5;
+}
+.Article .article-container .article-hero .article-hero-time-to-read h5 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.Article .article-container .article-hero .article-hero-time-to-read:hover svg {
+  animation: timer-animation 1s ease-in-out infinite;
+}
+.Article .article-container .article-content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-row: 1;
+  gap: 20px;
+  margin-top: 100px;
+}
+.Article .article-container .article-content article section {
+  margin-bottom: 30px;
+}
+.Article .article-container .article-content article section h2 {
+  margin-bottom: 10px;
+}
+.Article .article-container .article-content article p {
+  text-align: justify;
+}
+.Article .article-container .article-content .article-nav {
+  margin-top: 50px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+  background-color: #F5F5F5;
+  height: fit-content;
+  position: sticky;
+  top: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

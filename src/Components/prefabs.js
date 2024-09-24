@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 
 export const AnimatedHeading = ({ text, Heading, className }) => {
     const ref = useRef();
@@ -45,4 +45,21 @@ export const AnimatedHeading = ({ text, Heading, className }) => {
 
             className="animated-bar"></motion.span>
     </motion.h2>
+}
+
+export const BtnShadow = ({ text }) => {
+    const [IsBtnHovering, setIsBtnHovering] = useState(false)
+
+    return <motion.button
+        onMouseEnter={() => setIsBtnHovering(true)}
+        onMouseLeave={() => setIsBtnHovering(false)}
+        animate={IsBtnHovering ? { color: "#06a52e", borderColor: "#06a52e" } : { color: "#F5F5F5", borderColor: "#F5F5F5" }}
+        className="btn-shadow white relative">
+        <span>{text}</span>
+        <motion.span
+            initial={{ width: "0", height: "0" }}
+            animate={IsBtnHovering ? { width: "100%", height: "100%" } : { width: "0", height: "0" }}
+            transition={{ duration: 0.2 }}
+            className="btn-animation"></motion.span>
+    </motion.button>
 }

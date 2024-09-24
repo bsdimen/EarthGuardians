@@ -9,6 +9,8 @@ const About = lazy(() => import('./Pages/about'));
 const Blog = lazy(() => import('./Pages/blog'));
 const Contact = lazy(() => import('./Pages/contact'));
 const Educational = lazy(() => import('./Pages/educational'));
+const Article = lazy(() => import('./Pages/article'));
+
 
 
 const router = createBrowserRouter(
@@ -35,6 +37,14 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<Loader />}>
             <Blog />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/blog/article/:id"
+        element={
+          <Suspense fallback={<Loader />}>
+            <Article />
           </Suspense>
         }
       />

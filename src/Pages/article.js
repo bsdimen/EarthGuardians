@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRightIcon, BoredDisppointedEmoji, CheckIcon, HappyBigSmiledEmoji, HappySmiledEmoji, SadEmbrassedEmoji, SadPainEmoji, Timer } from "../Components/icons";
 
 import { motion, useInView } from 'framer-motion';
+import Footer from '../Components/footer';
 const Article = () => {
 
     return (
@@ -35,6 +36,8 @@ const Article = () => {
                     <RatingArticle />
                 </div>
             </div>
+
+            <Footer />
         </div>
 
 

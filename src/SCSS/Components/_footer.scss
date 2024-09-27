@@ -1,0 +1,32 @@
+footer {
+    height: fit-content;
+    width: 100%;
+    padding-block: 20px;
+    background-color: $primary-color;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-row: 1;
+
+        .footer-links {
+            ul {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+        }
+
+        .footer-nav-link {
+            color: $background-color;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+}

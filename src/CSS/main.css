@@ -229,6 +229,16 @@ button {
   transform: translateX(10px);
 }
 
+.btn-secondary {
+  padding: 10px 15px;
+  background-color: #06a52e;
+  color: #F5F5F5;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Mada, sans-serif;
+  margin-top: 20px;
+}
+
 .loading-block {
   position: fixed;
   top: 0;
@@ -343,6 +353,32 @@ header .nav-links nav .nav-link.active > span:last-of-type {
 }
 header.dark .nav-link {
   color: #222222 !important;
+}
+
+footer {
+  height: fit-content;
+  width: 100%;
+  padding-block: 20px;
+  background-color: #06a52e;
+}
+footer .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row: 1;
+}
+footer .container .footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+footer .container .footer-nav-link {
+  color: #F5F5F5;
+}
+footer .container .footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .hero-section .Slides {
@@ -736,6 +772,99 @@ header.dark .nav-link {
 }
 .about-content .get-involved-section .get-involved-section-wrapper .get-involved-links .get-involve-link img {
   transform: scale(0.5);
+}
+
+.Contact .contact-container {
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059));
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.Contact .contact-container .contact-content .video-background {
+  height: 25vh;
+  overflow: hidden;
+}
+.Contact .contact-container .contact-content .video-background video {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  max-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+.Contact .contact-container .contact-content .content {
+  margin-top: 50px;
+  width: 70%;
+}
+.Contact .contact-container .contact-content .content h1 {
+  font-family: "Source Serif 4", serif;
+  position: relative;
+  margin-bottom: 30px;
+  color: #E0E0E0;
+}
+.Contact .contact-container .contact-content .content h1::after {
+  content: " ";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background-color: #06a52e;
+}
+.Contact .contact-container .contact-content .content p {
+  margin-top: 15px;
+  color: #E0E0E0;
+  font-weight: 200;
+}
+.Contact .contact-form {
+  padding-block: 60px;
+}
+.Contact .contact-form h2 {
+  font-family: "Source Serif 4", serif;
+  position: relative;
+  margin-bottom: 30px;
+}
+.Contact .contact-form h2::after {
+  content: " ";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #06a52e;
+}
+.Contact .contact-form form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.Contact .contact-form form input,
+.Contact .contact-form form textarea {
+  background-color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-family: Mada, sans-serif;
+  font-size: 18px;
+  width: 60%;
+  appearance: none;
+}
+.Contact .contact-form form input:focus,
+.Contact .contact-form form textarea:focus {
+  outline: none;
+}
+.Contact .contact-form form input::placeholder,
+.Contact .contact-form form textarea::placeholder {
+  color: #a4a4a4;
+  font-weight: 300;
+}
+.Contact .contact-form form textarea {
+  resize: none;
+}
+.Contact .contact-form form .btn-secondary {
+  width: 60%;
 }
 
 .Blog {

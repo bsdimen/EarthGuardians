@@ -7,14 +7,17 @@ import { motion } from 'framer-motion';
 export default function About() {
     return (
         <div className="About">
-            <div className="hero-aria-about">
-                <Header />
-                <motion.div className='hero-aria-about-content'>
-                    <h2>About</h2>
-                    <h1>EarthGuardians</h1>
-                </motion.div>
+            <div className='container'>
+                <div className="hero-aria-about">
+                    <Header />
+                    <motion.div className='hero-aria-about-content'>
+                        <h2>About</h2>
+                        <h1>EarthGuardians</h1>
+                    </motion.div>
 
+                </div>
             </div>
+
             <div className="about-content">
                 <section className="mission-section">
                     <motion.div className='mission-section-content'

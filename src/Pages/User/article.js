@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import imgHero from "../Assets/Imgs/pexels-jplenio-2566845.jpg";
-import Header from '../Components/header';
+import imgHero from "../../Assets/Imgs/pexels-jplenio-2566845.jpg";
+import Header from '../../Components/header';
 
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRightIcon, BoredDisppointedEmoji, CheckIcon, HappyBigSmiledEmoji, HappySmiledEmoji, SadEmbrassedEmoji, SadPainEmoji, Timer } from "../Components/icons";
+import { ArrowRightIcon, BoredDisppointedEmoji, CheckIcon, HappyBigSmiledEmoji, HappySmiledEmoji, SadEmbrassedEmoji, SadPainEmoji, Timer } from "../../Components/icons";
 
 import { motion, useInView } from 'framer-motion';
-import Footer from '../Components/footer';
+import Footer from '../../Components/footer';
 const Article = () => {
 
     return (

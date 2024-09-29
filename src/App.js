@@ -4,12 +4,12 @@ import Loader from './Components/loader';
 import Root from './Pages/root';
 
 //========== Pages ==============
-const Home = lazy(() => import('./Pages/home'));
-const About = lazy(() => import('./Pages/about'));
-const Blog = lazy(() => import('./Pages/blog'));
-const Contact = lazy(() => import('./Pages/contact'));
-const Educational = lazy(() => import('./Pages/educational'));
-const Article = lazy(() => import('./Pages/article'));
+const Home = lazy(() => import('./Pages/User/home'));
+const About = lazy(() => import('./Pages/User/about'));
+const Blog = lazy(() => import('./Pages/User/blog'));
+const Contact = lazy(() => import('./Pages/User/contact'));
+const Educational = lazy(() => import('./Pages/User/educational'));
+const Article = lazy(() => import('./Pages/User/article'));
 
 
 

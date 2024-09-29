@@ -1,9 +1,9 @@
-import Header from "../Components/header";
+import Header from "../../Components/header";
 import { motion, useInView } from "framer-motion";
-import { AnimatedHeading, BtnShadow } from "../Components/prefabs"
+import { AnimatedHeading, BtnShadow } from "../../Components/prefabs"
 import { useRef, useState, useEffect } from "react";
-import { ArrowLeftIcon, ArrowRightIcon } from "../Components/icons";
-import heroVideo from "../Assets/Videos/01.mp4"
+import { ArrowLeftIcon, ArrowRightIcon } from "../../Components/icons";
+import heroVideo from "../../Assets/Videos/01.mp4"
 import { Link } from "react-router-dom";
 
 

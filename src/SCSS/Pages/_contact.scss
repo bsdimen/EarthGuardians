@@ -7,6 +7,8 @@
         overflow: hidden;
 
         .contact-content {
+            width: 100%;
+
             .video-background {
                 height: 25vh;
                 overflow: hidden;
@@ -25,13 +27,13 @@
 
             .content {
                 margin-top: 50px;
-                width: 70%;
 
                 h1 {
                     font-family: $font-family-heading ;
                     position: relative;
                     margin-bottom: 30px;
                     color: $background-color-dark;
+                    width: 700px;
 
                     &::after {
                         content: " ";
@@ -48,6 +50,7 @@
                     margin-top: 15px;
                     color: $background-color-dark;
                     font-weight: 200;
+                    width: 600px;
                 }
             }
         }
@@ -102,6 +105,7 @@
 
             textarea {
                 resize: none;
+                height: 150px;
             }
 
 

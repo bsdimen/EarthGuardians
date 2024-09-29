@@ -60,8 +60,6 @@
 }
 
 .blog-container {
-
-
     .blog-content {
         .what-are-intreseted-section {
             padding-block: 50px;
@@ -338,6 +336,13 @@
                     display: flex;
                     flex-direction: row;
                     gap: 20px;
+
+                    @include respond-to('medium') {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 35px;
+                        transform-origin: 100% 0
+                    }
 
                     .success-stories-heading {
                         background-color: $primary-color;

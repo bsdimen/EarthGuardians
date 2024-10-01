@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 
 export const AnimatedHeading = ({ text, Heading, className }) => {
     const ref = useRef();
@@ -47,14 +47,15 @@ export const AnimatedHeading = ({ text, Heading, className }) => {
     </motion.h2>
 }
 
-export const BtnShadow = ({ text }) => {
+export const BtnShadow = ({ text, fun }) => {
     const [IsBtnHovering, setIsBtnHovering] = useState(false)
 
     return <motion.button
         onMouseEnter={() => setIsBtnHovering(true)}
         onMouseLeave={() => setIsBtnHovering(false)}
         animate={IsBtnHovering ? { color: "#06a52e", borderColor: "#06a52e" } : { color: "#F5F5F5", borderColor: "#F5F5F5" }}
-        className="btn-shadow white relative">
+        className="btn-shadow white relative"
+        onClick={fun}>
         <span>{text}</span>
         <motion.span
             initial={{ width: "0", height: "0" }}
@@ -62,4 +63,24 @@ export const BtnShadow = ({ text }) => {
             transition={{ duration: 0.2 }}
             className="btn-animation"></motion.span>
     </motion.button>
+}
+
+export const VideoHero = ({ src }) => {
+    const videoRef = useRef(null);
+
+    useEffect(() => {
+
+        if (videoRef.current) {
+            videoRef.current.muted = true;
+            videoRef.current.play().catch((error) => {
+                console.log("Autoplay prevented:", error.message);
+            });
+        }
+    }, []);
+    return <figure class="video-background">
+        <video ref={videoRef} muted loop playsinline>
+            <source src={src} type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </figure>
 }

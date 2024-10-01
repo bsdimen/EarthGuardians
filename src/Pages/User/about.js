@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '../../Components/header';
+import { VideoHero } from "../../Components/prefabs";
+
 import visionImg from "../../Assets/Imgs/SVG/our-vision.svg";
 import arrowIcon from "../../Assets/Icons/Icon-arrow-right.svg";
 import { motion } from 'framer-motion';
@@ -122,30 +124,14 @@ export default function About() {
 }
 
 const HeroSection = () => {
-    const videoRef = useRef(null);
-
-    useEffect(() => {
-
-        if (videoRef.current) {
-            videoRef.current.muted = true;
-            videoRef.current.play().catch((error) => {
-                console.log("Autoplay prevented:", error.message);
-            });
-        }
-    }, []);
-
     return (
         <div className="container center-v">
             <motion.div className='hero-aria-content'>
-                <h1>Get To Know Earth Guardians</h1>
-                <p>We're here to help and answer any questions you may have about our mission and initiatives. Whether you're interested in collaborating, volunteering, or just learning more about how you can make a difference, feel free to reach out to us. Your support and feedback are invaluable to us as we work together to protect and preserve our planet for future generations. Contact us using the form below or through the provided details, and we'll get back to you as soon as possible.</p>
+                <h1 className='h1-hero-aria'>Get To Know Earth Guardians</h1>
+                <p className='pragraph-hero-aria'>We're here to help and answer any questions you may have about our mission and initiatives. Whether you're interested in collaborating, volunteering, or just learning more about how you can make a difference, feel free to reach out to us. Your support and feedback are invaluable to us as we work together to protect and preserve our planet for future generations. Contact us using the form below or through the provided details, and we'll get back to you as soon as possible.</p>
             </motion.div>
-            <figure class="video-background">
-                <video ref={videoRef} muted loop playsinline>
-                    <source src={heroVideo} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-            </figure>
+            <VideoHero src={heroVideo} />
+
         </div>
     )
 }

@@ -19,7 +19,7 @@
 
             .article-hero-title {
                 padding: 20px;
-                background-color: $background-color;
+                background-color: $color-background;
                 width: fit-content;
                 position: absolute;
                 bottom: -20%;
@@ -31,7 +31,7 @@
                     p {
                         font-size: 18px;
                         font-weight: 500;
-                        color: $dark-color-light;
+                        color: $color-dark-light;
                     }
 
 
@@ -45,14 +45,14 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                background-color: $primary-color;
-                border: solid 2px $background-color;
+                background-color: $color-primary;
+                border: solid 2px $color-background-dark;
                 padding: 10px;
-                color: $background-color;
+                color: $color-background-dark;
 
                 svg {
                     path {
-                        stroke: $background-color;
+                        stroke: $color-background-dark;
                     }
                 }
 
@@ -84,7 +84,7 @@
                     font-size: 18px;
                     margin-top: 5px;
                     margin-bottom: 15px;
-                    color: $primary-color;
+                    color: $color-primary;
 
                 }
 
@@ -93,7 +93,7 @@
 
                     h2 {
                         margin-bottom: 10px;
-                        color: $dark-color-dark;
+                        color: $color-dark-dark;
                     }
                 }
 
@@ -109,7 +109,7 @@
                 flex-direction: column;
                 gap: 20px;
                 align-items: start;
-                background-color: $background-color;
+                background-color: $color-background-dark;
                 height: fit-content;
                 position: sticky;
                 top: 20px;
@@ -118,14 +118,14 @@
 
         .did-enjoy-article-section {
             width: calc(100% * (3/4));
-            background-color: $background-color-light;
+            background-color: $color-background-dark;
             height: 150px;
             margin-bottom: 25px;
 
             h4 {
                 margin-bottom: 20px;
                 font-weight: 400;
-                color: $dark-color-dark;
+                color: $color-dark-dark;
             }
 
             form {
@@ -140,11 +140,11 @@
                         scale: 1.5;
                         transition: scale 0.1s ease-in-out;
 
-                        fill: $dark-color-light;
+                        fill: $color-dark-light;
 
                         &:hover {
                             scale: 2;
-                            fill: $primary-color;
+                            fill: $color-primary;
                         }
                     }
                 }
@@ -154,20 +154,20 @@
                 p {
                     text-align: center;
                     font-size: 20px;
-                    color: $primary-color;
+                    color: $color-primary;
                     margin-top: 20px;
                 }
 
                 span {
                     padding: 4px 8px;
-                    background-color: $accent-color;
+                    background-color: $color-accent;
 
 
                 }
 
                 svg {
                     path {
-                        fill: $background-color;
+                        fill: $color-background;
                     }
                 }
             }

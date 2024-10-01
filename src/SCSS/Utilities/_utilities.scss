@@ -1,6 +1,5 @@
 .btn-primary {
-    background-color: $background-color-dark;
-    // border: solid 1px $accent-color;
+    background-color: $color-background-dark;
     color: #ffff;
     padding: 10px 15px;
     margin-top: 24px;
@@ -16,8 +15,8 @@
         height: 100%;
         top: 0;
         left: 0;
-        background-color: $accent-color;
-        color: $background-color;
+        background-color: $color-accent;
+        color: $color-background;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -39,15 +38,15 @@
 }
 
 .btn-shadow {
-    color: $accent-color;
+    color: $color-accent;
     font-weight: 600;
-    border: 2px solid $accent-color;
+    border: 2px solid $color-accent;
     padding: 8px 24px;
     cursor: pointer;
 
     &.white {
-        border-color: $background-color;
-        color: $background-color;
+        border-color: $color-background;
+        color: $color-background;
     }
 
     >span:first-of-type {
@@ -65,7 +64,7 @@
     top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
-    background-color: $background-color;
+    background-color: $color-background;
 }
 
 .container {
@@ -96,7 +95,7 @@
         right: 0;
         height: 45px;
         width: 2px;
-        background-color: $primary-color;
+        background-color: $color-primary;
     }
 }
 
@@ -114,7 +113,7 @@
         transition: transform 0.4s ease-in-out;
 
         path {
-            stroke: $accent-color;
+            stroke: $color-accent;
         }
     }
 
@@ -128,7 +127,7 @@
             bottom: 0;
             width: 0%;
             height: 2px;
-            background-color: $accent-color;
+            background-color: $color-accent;
             transition: width 0.4s ease-in-out;
 
         }
@@ -156,11 +155,52 @@
 
 .btn-secondary {
     padding: 10px 15px;
-    background-color: $primary-color;
-    color: $background-color;
+    background-color: $color-primary;
+    color: $color-background;
     font-size: 20px;
     font-weight: 500;
     font-family: $font-family-body;
     margin-top: 20px;
     cursor: pointer;
+}
+
+.h1-hero-aria {
+    font-size: $h1-font-size;
+    font-family: $font-family-heading ;
+    position: relative;
+    margin-bottom: 30px;
+    color: $color-background-dark;
+    width: 700px;
+
+    &::after {
+        content: " ";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100px;
+        height: 3px;
+        background-color: $color-primary;
+    }
+
+}
+
+.pragraph-hero-aria {
+    font-size: $font-size-base;
+    margin-top: 15px;
+    color: $color-background-dark;
+    font-weight: 200;
+    width: 600px
+}
+
+.video-background {
+    video {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        max-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+
+        object-fit: cover;
+    }
 }

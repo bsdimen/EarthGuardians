@@ -9,49 +9,8 @@
         .contact-content {
             width: 100%;
 
-            .video-background {
-                height: 25vh;
-                overflow: hidden;
-
-                video {
-                    position: absolute;
-                    top: 0%;
-                    left: 0%;
-                    max-width: 100%;
-                    min-height: 100%;
-                    z-index: -1;
-
-                    object-fit: cover;
-                }
-            }
-
             .content {
                 margin-top: 50px;
-
-                h1 {
-                    font-family: $font-family-heading ;
-                    position: relative;
-                    margin-bottom: 30px;
-                    color: $background-color-dark;
-                    width: 700px;
-
-                    &::after {
-                        content: " ";
-                        position: absolute;
-                        bottom: -10px;
-                        left: 0;
-                        width: 100px;
-                        height: 3px;
-                        background-color: $primary-color;
-                    }
-                }
-
-                p {
-                    margin-top: 15px;
-                    color: $background-color-dark;
-                    font-weight: 200;
-                    width: 600px;
-                }
             }
         }
 
@@ -72,7 +31,7 @@
                 left: 0;
                 width: 50px;
                 height: 3px;
-                background-color: $primary-color;
+                background-color: $color-primary;
             }
         }
 
@@ -98,7 +57,7 @@
                 }
 
                 &::placeholder {
-                    color: $dark-color-light;
+                    color: $color-dark-light;
                     font-weight: 300;
                 }
             }

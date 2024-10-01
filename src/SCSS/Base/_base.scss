@@ -16,12 +16,12 @@ html {
 
     /* Handle */
     ::-webkit-scrollbar-thumb {
-        background: $accent-color-light;
+        background: $color-accent-light;
     }
 
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
-        background: $accent-color-dark;
+        background: $color-accent-dark;
     }
 }
 

@@ -1,21 +1,6 @@
 .About {
     width: 100%;
 
-    .video-background {
-
-
-        video {
-            position: absolute;
-            top: 0%;
-            left: 0%;
-            max-width: 100%;
-            min-height: 100%;
-            z-index: -1;
-
-            object-fit: cover;
-        }
-    }
-
     .hero-aria-about {
         min-height: 100vh;
         background-image: linear-gradient(#30303069, #30303069);
@@ -25,32 +10,6 @@
 
         .hero-aria-content {
             margin-top: 50px;
-
-            h1 {
-                font-family: $font-family-heading ;
-                position: relative;
-                margin-bottom: 30px;
-                color: $background-color-dark;
-                width: 700px;
-
-                &::after {
-                    content: " ";
-                    position: absolute;
-                    bottom: -10px;
-                    left: 0;
-                    width: 100px;
-                    height: 3px;
-                    background-color: $primary-color;
-                }
-            }
-
-            p {
-                margin-top: 15px;
-                color: $background-color-dark;
-                font-weight: 200;
-                width: 600px;
-            }
-
         }
 
     }
@@ -81,7 +40,7 @@
                         left: 0;
                         width: 50px;
                         height: 3px;
-                        background-color: $primary-color;
+                        background-color: $color-primary;
                     }
                 }
 
@@ -105,7 +64,6 @@
             .what-we-do-section-content {
                 display: flex;
                 flex-direction: column;
-                width: 900px;
 
                 .what-we-do-section-heading {
                     padding-block: 30px;
@@ -123,7 +81,7 @@
                     left: 0;
                     width: 50px;
                     height: 3px;
-                    background-color: $primary-color;
+                    background-color: $color-primary;
                 }
 
                 ul {
@@ -140,7 +98,7 @@
 
                     li {
                         padding: 20px;
-                        background-color: $primary-color-light;
+                        background-color: $color-primary-light;
                     }
                 }
             }
@@ -178,7 +136,7 @@
                             left: 0;
                             width: 50px;
                             height: 3px;
-                            background-color: $primary-color;
+                            background-color: $color-primary;
                         }
                     }
 
@@ -195,14 +153,13 @@
         }
 
         .join-us-section {
-            background-color: $primary-color-light;
+            background-color: $color-primary-light;
             padding-block: 65px;
             display: flex;
             align-items: start;
             justify-content: center;
 
             .join-us-section-wrapper {
-                width: 900px;
 
                 h2 {
                     font-family: "Source Serif 4";
@@ -215,13 +172,14 @@
                         left: 0;
                         width: 50px;
                         height: 3px;
-                        background-color: $primary-color;
+                        background-color: $color-primary;
                     }
                 }
 
                 p {
                     margin-block: 25px;
                     text-align: justify;
+                    width: 70%;
                 }
             }
         }
@@ -237,7 +195,7 @@
                     display: grid;
                     grid-template-columns: 1fr 1.2fr;
                     grid-row: 1;
-                    gap: 85px;
+                    gap: 120px;
 
                     @include respond-to('medium') {
                         display: flex;
@@ -256,7 +214,7 @@
                             left: 0;
                             width: 50px;
                             height: 3px;
-                            background-color: $primary-color;
+                            background-color: $color-primary;
                         }
                     }
 
@@ -278,7 +236,7 @@
                             flex-direction: row;
 
                             &:hover {
-                                color: $primary-color;
+                                color: $color-primary;
                                 text-decoration: underline;
                             }
 

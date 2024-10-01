@@ -1,21 +1,19 @@
 // Base Colors
-$primary-color: #06a52e;
-$accent-color: #C042EC;
-$background-color: #F5F5F5;
-$dark-color: #222222;
-$primary-color-light: #E6FACD;
-
-// Primary Color Shades
-$primary-color-lightest: #F2FFE6;
+$color-primary: #06a52e;
+$color-primary-light: #E6FACD;
 
 // Accent Color Shades
-$accent-color-dark: #9A33BF;
-$accent-color-light: #E893FB;
+$color-accent: #C042EC;
+$color-accent-dark: #9A33BF;
+$color-accent-light: #E893FB;
 
 // Background Color Shades
-$background-color-dark: #E0E0E0;
-$background-color-light: #FFFFFF;
+$color-background: #F5F5F5;
+$color-background-dark: #E0E0E0;
+$color-background-light: #FFFFFF;
 
-// Additional Shades for $dark-color-light
-$dark-color-dark: #383838; // Darker shade
-$dark-color-light: #a4a4a4; // Lighter shade
+// Additional Shades for Dark Color
+$color-dark: #222222;
+$color-dark-dark: #383838; // Darker shade
+$color-dark-medium: #717171; // Medium shade
+$color-dark-light: #a4a4a4; // Lighter shade

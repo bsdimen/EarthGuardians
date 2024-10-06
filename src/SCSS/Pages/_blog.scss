@@ -5,6 +5,8 @@
         background-image: linear-gradient(#30303069, #30303069);
         background-size: cover;
         position: relative;
+        min-height: 100vh;
+        overflow: hidden;
 
         .blog-heading {
             padding-block: 50px;
@@ -20,7 +22,7 @@
     }
 
     .blog-container {
-        padding-block: 70px;
+        padding-block: 50px;
 
         .blog-content {
 
@@ -31,9 +33,15 @@
                 align-items: start;
                 flex-direction: row;
 
-                button {
-                    font-size: 18px;
+                .category {
+                    font-size: 15px;
                     color: $color-dark-dark;
+                    text-align: left;
+                    min-width: 180px;
+                    padding-bottom: 10px;
+                    padding-left: 10px;
+                    border-bottom: 1px solid $color-background-dark;
+                    border-right: 1px solid $color-background-dark;
                 }
             }
         }

@@ -89,9 +89,9 @@ const Post = () => {
 const Categories = () => {
     const categories = ["Sustainability Tips", "Climate Change", "Conservation Efforts", "Renewable Energy", "Green Activism"]
     return <div className="categories">
-        <button>All</button>
+        <button className="category">All</button>
         {categories.map((category, index) => (
-            <button>{category}</button>
+            <button className="category">{category}</button>
         ))}
 
     </div>

@@ -776,6 +776,8 @@ footer .container .footer-social {
   background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059));
   background-size: cover;
   position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
 .Blog .hero-section .blog-heading {
   padding-block: 50px;
@@ -785,7 +787,7 @@ footer .container .footer-social {
   width: 70%;
 }
 .Blog .blog-container {
-  padding-block: 70px;
+  padding-block: 50px;
 }
 .Blog .blog-container .blog-content .categories {
   width: 80%;
@@ -794,9 +796,15 @@ footer .container .footer-social {
   align-items: start;
   flex-direction: row;
 }
-.Blog .blog-container .blog-content .categories button {
-  font-size: 18px;
+.Blog .blog-container .blog-content .categories .category {
+  font-size: 15px;
   color: #383838;
+  text-align: left;
+  min-width: 180px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-bottom: 1px solid #E0E0E0;
+  border-right: 1px solid #E0E0E0;
 }
 
 .Article .article-container .article-hero {

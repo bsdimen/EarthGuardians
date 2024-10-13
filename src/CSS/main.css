@@ -1001,4 +1001,19 @@ footer .container .footer-social {
   fill: #F5F5F5;
 }
 
+.hero-section {
+  background-image: linear-gradient(rgba(48, 48, 48, 0.4117647059), rgba(48, 48, 48, 0.4117647059));
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.hero-section .home-heading {
+  padding-block: 50px;
+  width: 100%;
+}
+.hero-section .home-heading .container .content {
+  width: 70%;
+}
+
 /*# sourceMappingURL=main.css.map */

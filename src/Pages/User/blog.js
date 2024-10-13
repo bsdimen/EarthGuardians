@@ -24,32 +24,30 @@ export default function Blog() {
             ),
     });
 
-    // State to manage multiple selected categories
+
     const [selectedCategories, setSelectedCategories] = useState(["All"]);
 
-    // Function to handle category selection logic
     const handleCategorySelect = (category) => {
         if (category === "All") {
-            setSelectedCategories(["All"]); // If "All" is selected, reset to only "All"
+            setSelectedCategories(["All"]);
         } else {
-            // If "All" is already selected, remove it before allowing multiple selections
+
             if (selectedCategories.includes("All")) {
                 setSelectedCategories([category]);
             } else {
                 if (selectedCategories.includes(category)) {
-                    // If category is already selected, deselect it
                     setSelectedCategories(selectedCategories.filter(cat => cat !== category));
                 } else {
-                    // Otherwise, add the category to the selected ones
+
                     setSelectedCategories([...selectedCategories, category]);
                 }
             }
         }
     };
 
-    // Filter blogs based on selected categories
+
     const filteredBlogs = selectedCategories.includes("All")
-        ? data // Show all blogs if "All" is selected
+        ? data
         : data?.filter(blog => selectedCategories.includes(blog.category));
 
     return (

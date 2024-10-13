@@ -2,37 +2,21 @@
 import { ArrowLeftIcon, ArrowRightIcon } from "../../Components/icons";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
-import { BtnShadow } from "../../Components/prefabs";
+import { BtnShadow, VideoHero } from "../../Components/prefabs";
 import { useRef, useState, useEffect } from "react";
 import Header from '../../Components/header';
+import heroVideo from "../../Assets/Videos/06.mp4";
+
 
 
 export default function Home() {
-    const successSectionRef = useRef(null)
-    const isInView = useInView(successSectionRef)
     return (
         <section className="Home">
-            <div className='hero-section'>
-                <Header />
-
+            <div className='hero-section center-h'>
+                <Header color="white" />
+                <HeroSection />
             </div>
-            <div className="success-stories-section" ref={successSectionRef}>
-                <div className="success-stories-content center-h center-v">
-                    <div className="container">
-                        <SucessStoriesContent />
-                        <motion.div
-                            initial={{ width: 0 }}
-                            animate={isInView ? { width: "200px" } : {}}
-                            transition={{ duration: 0.8 }}
-                            style={{ transformOrigin: '0 100%' }}
-                            className="success-stories-img">
-                        </motion.div>
-                        <SucessStoriesContent />
-                    </div>
 
-                </div>
-
-            </div>
         </section>
 
     )
@@ -214,4 +198,18 @@ const SucessStoriesContent = () => {
         <BtnShadow text="See more" />
     </div>)
 
+}
+const HeroSection = () => {
+    return (
+        <div className="home-heading center-h center-v">
+            <div className="container  center-v">
+                <div className="content">
+                    <h1 className="h1-hero-aria">Earth Guardians: Protecting Our Planet for Future Generations</h1>
+                    <p className="pragraph-hero-aria">Join the movement to safeguard our Earth through education, conservation, and action</p>
+                    <button className="btn-primary" data-content="See More">See More</button>
+                </div>
+                <VideoHero src={heroVideo} />
+            </div>
+        </div>
+    );
 }

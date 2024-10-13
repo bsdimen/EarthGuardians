@@ -7,7 +7,7 @@ import Footer from '../../Components/footer';
 import { VideoHero } from "../../Components/prefabs";
 import visionImg from "../../Assets/Imgs/SVG/our-vision.svg";
 import arrowIcon from "../../Assets/Icons/Icon-arrow-right.svg";
-import heroVideo from "../../Assets/Videos/03.mp4";
+import heroVideo from "../../Assets/Videos/05.mp4";
 
 
 export default function About() {

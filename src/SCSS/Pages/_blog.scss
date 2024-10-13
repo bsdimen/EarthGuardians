@@ -27,22 +27,111 @@
         .blog-content {
 
             .categories {
-                width: 80%;
+                max-width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: start;
                 flex-direction: row;
+                border-right: 1px solid $color-background-dark;
 
                 .category {
+                    flex-grow: 1;
+                    flex-basis: 0;
                     font-size: 15px;
                     color: $color-dark-dark;
                     text-align: left;
-                    min-width: 180px;
-                    padding-bottom: 10px;
-                    padding-left: 10px;
-                    border-bottom: 1px solid $color-background-dark;
-                    border-right: 1px solid $color-background-dark;
+                    width: fit-content;
+                    padding-block: 20px;
+                    padding-left: 20px;
+                    border: 1px solid $color-background-dark;
+                    border-right: none;
+
+                    &.active {
+                        background-color: $color-accent;
+                        color: $color-background;
+                        font-weight: 600;
+                        border-inline: 2px solid $color-background;
+                    }
                 }
+
+            }
+
+            .blogs-wrapper {
+                .blogs {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    margin-block: 50px;
+                    gap: 10px;
+
+                    .single-post {
+                        .single-post-img {
+                            position: relative;
+                            overflow: hidden;
+
+                            .img {
+                                width: 100%;
+
+                                img {
+                                    width: inherit;
+
+                                }
+                            }
+
+                            .single-post-img-hovered {
+                                position: absolute;
+                                top: 0;
+                                width: 100%;
+                                height: 100%;
+                                z-index: 1000;
+                                background-color: $color-primary;
+
+                                .heading {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                }
+
+                                .time-to-read {
+                                    color: $color-background-light;
+                                    width: fit-content;
+                                    padding-block: 8px;
+                                    padding-inline: 8px;
+                                    font-size: 16px;
+                                    margin-block: 8px;
+                                    margin-inline: 10px;
+
+
+                                }
+                            }
+                        }
+
+                        .single-post-content {
+                            padding-block: 10px;
+                            padding-inline: 15px;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+                            background-color: $color-background-light;
+
+                            .details {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                h6 {
+                                    font-weight: 400;
+                                    color: $color-dark-dark;
+
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+
             }
         }
     }

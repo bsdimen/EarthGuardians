@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Loader from './Components/loader';
 import Root from './Pages/root';
 
@@ -77,9 +78,14 @@ const router = createBrowserRouter(
   )
 );
 
+const queryClient = new QueryClient()
+
 function App() {
   return (
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+
+    </QueryClientProvider>
   );
 }
 

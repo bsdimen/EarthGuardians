@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
-import Header from '../../Components/header';
-import { VideoHero } from "../../Components/prefabs";
+import { motion } from 'framer-motion';
 
+import Header from '../../Components/header';
+import Footer from '../../Components/footer';
+
+import { VideoHero } from "../../Components/prefabs";
 import visionImg from "../../Assets/Imgs/SVG/our-vision.svg";
 import arrowIcon from "../../Assets/Icons/Icon-arrow-right.svg";
-import { motion } from 'framer-motion';
 import heroVideo from "../../Assets/Videos/03.mp4";
 
-import { useRef, useEffect } from 'react';
+
 export default function About() {
     return (
         <div className="About">
@@ -118,6 +120,8 @@ export default function About() {
 
                 </section>
             </div>
+
+            <Footer />
         </div>
 
     )

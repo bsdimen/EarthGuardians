@@ -58,19 +58,18 @@ export default function Blog() {
             </div>
 
             <div className="blog-container">
-                <div className="blog-content">
-                    <div className="category-section center-h">
-                        <div className="container">
+                <div className="blog-content center-h" >
+                    <div className="container">
+                        <div className="category-section">
+                            <h6>Filter</h6>
                             <Categories
                                 categories={categories}
                                 selectedCategories={selectedCategories}
                                 onCategorySelect={handleCategorySelect}
                             />
                         </div>
-                    </div>
 
-                    <div className="blogs-wrapper center-h">
-                        <div className="container">
+                        <div className="blogs-wrapper">
                             <div className="blogs">
                                 {filteredBlogs && filteredBlogs.map((ele, index) => (
                                     <Post
@@ -82,8 +81,10 @@ export default function Blog() {
                                     />
                                 ))}
                             </div>
+
                         </div>
                     </div>
+
                 </div>
             </div>
             <Footer />
@@ -92,21 +93,38 @@ export default function Blog() {
 }
 
 const Categories = ({ categories, selectedCategories, onCategorySelect }) => {
+    const handleCheckboxChange = (category) => {
+        onCategorySelect(category);
+    };
+
     return (
         <div className="categories">
+            <h4>Categories</h4>
             {categories.map((category, index) => (
-                <button
-                    key={index}
-                    className={`category ${selectedCategories.includes(category) ? 'active' : ''}`}
-                    onClick={() => onCategorySelect(category)}
-                >
+                <label key={index} className="checkbox-filter">
+                    <input
+                        type="checkbox"
+                        checked={selectedCategories.includes(category)}
+                        onChange={() => handleCheckboxChange(category)}
+                    />
                     {category}
-                </button>
+                </label>
             ))}
         </div>
     );
+};
+const SortBlogs = () => {
+    return <div className="sort-by-section">
+        <label key={index} className="checkbox-filter">
+            <input
+                type="checkbox"
+                checked={selectedCategories.includes(category)}
+                onChange={() => handleCheckboxChange(category)}
+            />
+            {category}
+        </label>
+    </div>
 }
-
 const Post = ({ title, time, date, category }) => {
     const [isPostHovering, setIsPostHovering] = useState(false);
 

@@ -1,40 +1,26 @@
-.btn-primary {
-    background-color: $color-background-dark;
-    color: #ffff;
-    padding: 10px 15px;
-    margin-top: 24px;
+.btn-cta {
+    color: $color-background-light;
+    background-color: $color-accent;
+    font-weight: 600;
     font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
+    border: 2px solid $color-accent;
+    padding: 8px 24px;
     position: relative;
+    cursor: pointer;
 
-    &::after {
+    >:first-child {
         position: absolute;
-        content: attr(data-content);
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-color: $color-accent;
-        color: $color-background;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: translate(-.3rem, -.3rem);
-        transition: transform .2s cubic-bezier(.34, 1.56, .64, 1);
-
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-background;
+        z-index: 1000;
     }
 
-    &:hover {
-
-        &::after {
-            transform: translate(0, 0);
-            ; // Move the ::after element to its original position on hover
-        }
+    >:nth-child(2) {
+        position: sticky;
+        z-index: 3000;
     }
-
-
-
 }
 
 .btn-shadow {
@@ -55,27 +41,51 @@
     }
 }
 
+.btn-primary {
+    color: $color-background;
+    background-color: $color-primary;
+    font-weight: 600;
+    font-size: 20px;
+    border: 2px solid $color-primary;
+    padding: 8px 24px;
+    position: relative;
+    cursor: pointer;
+
+    >:first-child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-background;
+        z-index: 1000;
+    }
+
+    >:nth-child(2) {
+        position: sticky;
+        z-index: 3000;
+    }
+}
+
 .relative {
     position: relative;
 }
 
-.btn-animation {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
-    background-color: $color-background;
-}
 
 .container {
     max-width: 1200px;
     width: 80%;
+
+    @include respond-to("medium") {
+        width: 95%;
+    }
 }
 
 .center-h {
     display: flex;
     align-items: center;
     flex-direction: column;
+
+
 }
 
 .center-v {
@@ -171,6 +181,7 @@
     margin-bottom: 30px;
     color: $color-background-dark;
     width: 700px;
+    max-width: fit-content;
 
     &::after {
         content: " ";
@@ -182,6 +193,9 @@
         background-color: $color-primary;
     }
 
+    @include respond-to('medium') {
+        font-size: 35px;
+    }
 }
 
 .pragraph-hero-aria {
@@ -189,7 +203,12 @@
     margin-top: 15px;
     color: $color-background-dark;
     font-weight: 200;
-    width: 600px
+    width: 600px;
+    max-width: fit-content;
+
+    @include respond-to('medium') {
+        font-size: 35px;
+    }
 }
 
 .video-background {

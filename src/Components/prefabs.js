@@ -61,10 +61,45 @@ export const BtnShadow = ({ text, fun }) => {
             initial={{ width: "0", height: "0" }}
             animate={IsBtnHovering ? { width: "100%", height: "100%" } : { width: "0", height: "0" }}
             transition={{ duration: 0.2 }}
-            className="btn-animation"></motion.span>
+        ></motion.span>
     </motion.button>
 }
+export const BtnPrimary = ({ text, action }) => {
+    const [IsBtnHovering, setIsBtnHovering] = useState(false)
 
+    return <motion.button
+        onMouseEnter={() => setIsBtnHovering(true)}
+        onMouseLeave={() => setIsBtnHovering(false)}
+        animate={IsBtnHovering ? { color: "#06a52e", borderColor: "#06a52e" } : null}
+        className="btn-primary"
+        onClick={action}>
+        <motion.span
+            initial={{ width: "0", height: "0" }}
+            animate={IsBtnHovering ? { width: "100%", height: "100%" } : { width: "0", height: "0" }}
+            transition={{ duration: 0.2 }}
+        ></motion.span>
+        <span>{text}</span>
+    </motion.button>
+
+}
+export const BtnCTA = ({ text, action }) => {
+    const [IsBtnHovering, setIsBtnHovering] = useState(false)
+
+    return <motion.button
+        onMouseEnter={() => setIsBtnHovering(true)}
+        onMouseLeave={() => setIsBtnHovering(false)}
+        animate={IsBtnHovering ? { color: "#C042EC", borderColor: "#C042EC" } : null}
+        className="btn-cta"
+        onClick={action}>
+        <motion.span
+            initial={{ width: "0", height: "0" }}
+            animate={IsBtnHovering ? { width: "100%", height: "100%" } : { width: "0", height: "0" }}
+            transition={{ duration: 0.2 }}
+        ></motion.span>
+        <span>{text}</span>
+    </motion.button>
+
+}
 export const VideoHero = ({ src }) => {
     const videoRef = useRef(null);
 

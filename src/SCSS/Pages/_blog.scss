@@ -24,43 +24,79 @@
     .blog-container {
         padding-block: 50px;
 
-        .blog-content {
+        .container {
+            display: flex;
+            flex-direction: row;
 
-            .categories {
-                max-width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: start;
-                flex-direction: row;
-                border-right: 1px solid $color-background-dark;
+            .category-section {
+                .categories {
+                    max-width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
 
-                .category {
-                    flex-grow: 1;
-                    flex-basis: 0;
-                    font-size: 15px;
-                    color: $color-dark-dark;
-                    text-align: left;
-                    width: fit-content;
-                    padding-block: 20px;
-                    padding-left: 20px;
-                    border: 1px solid $color-background-dark;
-                    border-right: none;
+                    .checkbox-filter {
+                        display: flex;
+                        align-items: center;
+                        width: fit-content;
+                        text-wrap: nowrap;
+                        flex-grow: 1;
+                        flex-basis: 0;
+                        font-size: 15px;
+                        color: $color-dark-dark;
+                        text-align: left;
+                        font-weight: 500;
+                        width: fit-content;
+                        padding-block: 5px;
+                        padding-inline: 0;
+                        border-right: none;
+                        cursor: pointer;
 
-                    &.active {
-                        background-color: $color-accent;
-                        color: $color-background;
-                        font-weight: 600;
-                        border-inline: 2px solid $color-background;
+                        input[type="checkbox"] {
+                            margin-right: 10px;
+                            appearance: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            width: 16px;
+                            height: 16px;
+                            border: 1px solid $color-accent;
+                            accent-color: $color-accent;
+                            // border-radius: 50%;
+                            position: relative;
+
+                            &:checked {
+                                background-color: $color-background;
+
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 12px;
+                                    height: 12px;
+                                    background-color: $color-accent;
+                                    // border-radius: 50%;
+                                }
+                            }
+                        }
+
+                        &.active {
+                            background-color: $color-accent;
+                            color: $color-background;
+                            font-weight: 600;
+                            border-inline: 2px solid $color-background;
+                        }
                     }
                 }
-
             }
+
 
             .blogs-wrapper {
                 .blogs {
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
-                    margin-block: 50px;
                     gap: 10px;
 
                     .single-post {

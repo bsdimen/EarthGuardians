@@ -1,18 +1,297 @@
-.hero-section {
-    background-image: linear-gradient(#30303069, #30303069);
-    background-size: cover;
-    position: relative;
-    min-height: 100vh;
-    overflow: hidden;
+.Home {
+    color: $color-dark;
 
-    .home-heading {
-        padding-block: 50px;
-        width: 100%;
+    .hero-section {
+        background-image: linear-gradient(#30303069, #30303069);
+        background-size: cover;
+        position: relative;
+        height: 100vh;
+        max-height: fit-content;
+        overflow: hidden;
 
-        .container {
 
-            .content {
+        .home-heading {
+            padding-block: 50px;
+            width: 100%;
+
+            .container {
+
+                .content {
+                    width: 70%;
+                }
+            }
+        }
+    }
+
+    .home-content {
+        .our-mission {
+            padding-block: 40px;
+
+            .our-mission-heading {
+
+                h2,
+                p {
+                    color: $color-dark;
+                }
+
+                h2 {
+                    font-size: $h2-font-size;
+                }
+            }
+
+
+            .our-missions-elements {
+                background-color: $color-background-light;
+                margin-top: 15px;
                 width: 70%;
+
+                .mission {
+                    position: relative;
+
+                    .mission-heading {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding-block: 20px;
+                        padding-inline: 10px;
+                        background-color: $color-primary;
+                        color: $color-background;
+                        border-bottom: 1px solid $color-primary-light;
+                        cursor: pointer;
+                        margin-bottom: 0%;
+                        transition: margin 0.3s ease;
+                    }
+
+                    .mission-paragraph {
+                        padding-inline: 10px;
+                        padding-block: 20px;
+                        position: absolute;
+                        top: 0;
+                        visibility: hidden;
+                        transition: margin 0.3s ease;
+                        background-color: $color-background ;
+
+                    }
+
+                    &.active {
+                        border: 1px solid $color-primary;
+
+                        .mission-paragraph {
+                            top: 60px;
+                            visibility: visible;
+                        }
+
+                        .mission-heading {
+                            border-bottom: 1px solid $color-primary;
+                            margin-bottom: 70px;
+                            background-color: $color-background ;
+                            color: $color-primary;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .our-blog {
+            color: $color-dark;
+
+            .our-blog-heading {
+                h2 {
+                    color: inherit;
+                }
+            }
+
+            .our-blog-carousel {
+                margin-top: 30px;
+                position: relative;
+                overflow: hidden;
+
+                .our-blog-carousel-items {
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                }
+
+                .our-blog-carousel-item {
+                    flex-shrink: 0;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+                    width: 100%;
+                    height: fit-content;
+                    background-color: $color-background-light;
+
+
+                    .content {
+                        flex: 3 1 0;
+                        height: 100%;
+                        padding-inline: 20px;
+                        padding-block: 50px;
+
+                        h3 {
+                            font-size: $h3-font-size;
+                            margin-bottom: 20px;
+                        }
+
+                        p {
+                            text-align: justify;
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    .img {
+                        flex: 3 1 0;
+                        width: 100%;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+
+                    @include respond-to('medium') {
+                        flex-direction: column;
+
+                        .content,
+                        .img {
+                            flex: 1 1 100%;
+                        }
+                    }
+                }
+
+                .carousel-icons {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin-top: 20px;
+                    gap: 5px;
+                    width: 100%;
+
+                    span {
+                        display: block;
+                        width: 10px;
+                        height: 10px;
+                        background-color: $color-accent;
+                    }
+                }
+
+                .arrow-icons {
+
+                    .left-icon {
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        display: flex;
+                        align-items: center;
+                        transform: translateY(-50%);
+                        background-color: $color-accent;
+                        cursor: pointer;
+                        gap: 10px;
+
+                        span {}
+
+                        svg {
+                            path {
+                                stroke: $color-background-light;
+                            }
+                        }
+                    }
+
+                    .right-icon {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        display: flex;
+                        align-items: center;
+                        background-color: $color-accent;
+                        cursor: pointer;
+
+                        svg {
+                            path {
+                                stroke: $color-background-light;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .educational-ress-section {
+            color: $color-dark;
+            margin-block: 70px;
+
+            .educational-ress-heading {
+                h2 {
+                    color: $color-dark;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    margin-bottom: 40px;
+                }
+            }
+
+            .educational-ress-elements {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+
+                @include respond-to('medium') {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+
+                .educational-ress-element {
+                    background-color: $color-primary;
+                    padding-block: 20px;
+                    padding-inline: 15px;
+                    overflow: hidden;
+
+                    h2 {
+                        color: $color-background-light;
+                        font-family: $font-family-heading;
+                        margin-bottom: 10px;
+                    }
+
+                    p {
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+
+        }
+
+        .get-involved-section {
+            .get-involved-heading {
+                h2 {
+                    color: $color-dark;
+                }
+            }
+
+            .get-involved-roles {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 15px;
+                margin-top: 20px;
+
+                .get-involved-role {
+                    flex: 1 0 300px;
+                    background-color: $color-background-light;
+                    padding-block: 30px;
+                    text-align: center;
+                    border: 1px solid $color-primary;
+                    height: fit-content;
+
+                    p {
+                        margin-top: 15px;
+                        margin-bottom: 25px;
+                    }
+                }
             }
         }
     }

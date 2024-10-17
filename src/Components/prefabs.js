@@ -47,7 +47,7 @@ export const AnimatedHeading = ({ text, Heading, className }) => {
     </motion.h2>
 }
 
-export const BtnShadow = ({ text, fun }) => {
+export const BtnShadow = ({ text, action }) => {
     const [IsBtnHovering, setIsBtnHovering] = useState(false)
 
     return <motion.button
@@ -55,7 +55,7 @@ export const BtnShadow = ({ text, fun }) => {
         onMouseLeave={() => setIsBtnHovering(false)}
         animate={IsBtnHovering ? { color: "#06a52e", borderColor: "#06a52e" } : { color: "#F5F5F5", borderColor: "#F5F5F5" }}
         className="btn-shadow white relative"
-        onClick={fun}>
+        onClick={action}>
         <span>{text}</span>
         <motion.span
             initial={{ width: "0", height: "0" }}

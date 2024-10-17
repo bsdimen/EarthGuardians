@@ -1,5 +1,13 @@
 .educational {
-    padding-block: 25px;
+
+    .educational-hero-heading {
+        margin-block-start: 35px;
+        margin-block-end: 15px;
+
+        h1 {
+            color: $color-dark;
+        }
+    }
 
 }
 

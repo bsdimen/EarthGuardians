@@ -1,6 +1,11 @@
 header {
     padding: 30px 0;
 
+
+    @include respond-to('medium') {
+        position: relative;
+    }
+
     .nav-links {
         display: flex;
         justify-content: space-between;
@@ -8,19 +13,17 @@ header {
         min-width: 100%;
         margin-right: 12px;
         z-index: 1000;
-        position: relative;
         font-weight: 500;
 
-        // Hide menu-lines by default for larger screens
         .menu-lines {
             background-color: #fff;
             padding: 20px;
             position: relative;
             cursor: pointer;
-            display: none; // Hidden by default
+            display: none;
 
-            @media (max-width: 768px) {
-                display: block; // Show on small screens
+            @include respond-to('medium') {
+                display: block;
             }
 
             .menu-line {
@@ -33,7 +36,7 @@ header {
 
         nav {
             display: flex;
-            flex-direction: row; // Row by default
+            flex-direction: row;
             align-items: center;
             gap: 45px;
 
@@ -66,30 +69,47 @@ header {
 
                 &.active {
 
+                    >span:first-of-type {
+                        color: $color-background-light;
+                    }
+
                     >span:last-of-type {
                         transform: scale(1);
                     }
                 }
             }
+
+            @include respond-to('medium') {
+                position: absolute;
+                top: 6rem;
+                width: 100%;
+                flex-direction: column;
+                gap: 25px;
+                background-color: #fff;
+                z-index: 3000;
+
+                .nav-link {
+                    color: $color-dark;
+                    text-align: start;
+                    padding-inline: 20px;
+                    width: 100%;
+                }
+            }
         }
 
-        // For small screens
-        @media (max-width: 768px) {
-            position: absolute;
-            flex-direction: column;
+
+        @include respond-to('medium') {
             align-content: center;
-            top: 100px;
-            right: 0;
-            background-color: #fff;
-            padding: 20px;
-            display: none; // Initially hidden
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
 
             &.open {
-                display: flex; // Show when the menu is open
+                display: flex;
             }
 
             .nav-link {
-                font-size: 25px; // Larger font size for small screens
+                font-size: 25px;
             }
         }
     }

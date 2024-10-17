@@ -91,58 +91,58 @@
             }
         }
     ],
-    "educational_resources": {
-        "books": [
-            {
-                "title": "The Uninhabitable Earth: Life After Warming",
-                "description": "A detailed analysis of the catastrophic impacts of climate change.",
-                "author": "David Wallace-Wells",
-                "pages": 320,
-                "publisher": "Crown Publishing Group",
-                "year": 2019
-            },
-            {
-                "title": "Silent Spring",
-                "description": "The book that launched the environmental movement.",
-                "author": "Rachel Carson",
-                "pages": 400,
-                "publisher": "Houghton Mifflin",
-                "year": 1962
-            }
-        ],
-        "documentaries": [
-            {
-                "title": "Before the Flood",
-                "description": "Leonardo DiCaprio explores the topic of climate change.",
-                "director": "Fisher Stevens",
-                "year": 2016,
-                "duration": "1h 36m"
-            },
-            {
-                "title": "Our Planet",
-                "description": "A documentary series exploring Earth's natural beauty and environmental challenges.",
-                "director": "Alastair Fothergill",
-                "year": 2019,
-                "episodes": 8
-            }
-        ],
-        "external_articles": [
-            {
-                "title": "Why We Need Green Energy Now",
-                "description": "An analysis of the urgency for transitioning to green energy.",
-                "author": "Mark Smith",
-                "publication": "Green Tech News",
-                "year": 2022,
-                "link": "https://greentechnews.com/green-energy-article"
-            },
-            {
-                "title": "The Future of Eco-Friendly Transportation",
-                "description": "Exploring the next big innovations in sustainable transportation.",
-                "author": "Sarah Johnson",
-                "publication": "Eco Innovations",
-                "year": 2021,
-                "link": "https://ecoinnovations.com/transportation-article"
-            }
-        ]
-    }
+    "educational_resources": [
+        {
+            "type": "book",
+            "title": "The Uninhabitable Earth: Life After Warming",
+            "description": "A detailed analysis of the catastrophic impacts of climate change.",
+            "author": "David Wallace-Wells",
+            "pages": 320,
+            "publisher": "Crown Publishing Group",
+            "year": 2019
+        },
+        {
+            "type": "book",
+            "title": "Silent Spring",
+            "description": "The book that launched the environmental movement.",
+            "author": "Rachel Carson",
+            "pages": 400,
+            "publisher": "Houghton Mifflin",
+            "year": 1962
+        },
+        {
+            "type": "documentary",
+            "title": "Before the Flood",
+            "description": "Leonardo DiCaprio explores the topic of climate change.",
+            "director": "Fisher Stevens",
+            "year": 2016,
+            "duration": "1h 36m"
+        },
+        {
+            "type": "documentary",
+            "title": "Our Planet",
+            "description": "A documentary series exploring Earth's natural beauty and environmental challenges.",
+            "director": "Alastair Fothergill",
+            "year": 2019,
+            "episodes": 8
+        },
+        {
+            "type": "article",
+            "title": "Why We Need Green Energy Now",
+            "description": "An analysis of the urgency for transitioning to green energy.",
+            "author": "Mark Smith",
+            "publication": "Green Tech News",
+            "year": 2022,
+            "link": "https://greentechnews.com/green-energy-article"
+        },
+        {
+            "type": "article",
+            "title": "The Future of Eco-Friendly Transportation",
+            "description": "Exploring the next big innovations in sustainable transportation.",
+            "author": "Sarah Johnson",
+            "publication": "Eco Innovations",
+            "year": 2021,
+            "link": "https://ecoinnovations.com/transportation-article"
+        }
+    ]
 }

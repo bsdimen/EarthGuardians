@@ -1,9 +1,9 @@
 
 import { ArrowLeftIcon, ArrowRightIcon, AddIcon } from "../../Components/icons";
-import { motion, useInView } from "framer-motion";
-import { Link } from "react-router-dom";
-import { BtnShadow, VideoHero, BtnPrimary, BtnCTA } from "../../Components/prefabs";
-import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { VideoHero, BtnPrimary, BtnCTA } from "../../Components/prefabs";
+import { useRef, useState, useEffect, useCallback } from "react";
 import Header from '../../Components/header';
 import Footer from '../../Components/footer';
 import heroVideo from "../../Assets/Videos/06.mp4";
@@ -75,6 +75,10 @@ const OurMissionElements = () => {
 
     const [openedElementIndex, setOpenedElementIndex] = useState(null);
 
+    const handleElementClick = useCallback((index) => {
+        setOpenedElementIndex(openedElementIndex === index ? null : index);
+    }, [openedElementIndex]);
+
     return (
         <div className="our-missions-elements">
             {elements.map((ele, index) => (
@@ -84,7 +88,7 @@ const OurMissionElements = () => {
                 >
                     <div
                         className="mission-heading"
-                        onClick={() => setOpenedElementIndex(openedElementIndex === index ? null : index)}
+                        onClick={() => handleElementClick(index)}
                     >
                         <h4>{ele.title}</h4>
                         <AddIcon />
@@ -108,10 +112,10 @@ const OurBlogSection = () => {
     const [isIconRightVisible, setIsIconRightVisible] = useState(true);
     const [isIconLeftVisible, setIsIconLeftVisible] = useState(false);
 
-    const handelRefItem = (ref) => {
+    const handelRefItem = useCallback((ref) => {
         itemRef.current = ref;
-        console.log(itemRef)
-    }
+    }, []);
+
     useEffect(() => {
         const handleScroll = () => {
             if (carouselRef.current) {
@@ -147,7 +151,7 @@ const OurBlogSection = () => {
             }
         };
 
-    }, [])
+    }, [carouselRef.current])
     return <div className="our-blog center-h">
         <div className="container">
             <div className="our-blog-heading">
@@ -271,7 +275,10 @@ const FetchedBlogs = (props) => {
 }
 
 const EducationalRessSection = () => {
-    const [elementHovered, setElementHovered] = useState(null)
+
+    const [elementHovered, setElementHovered] = useState(null);
+    const navigate = useNavigate();
+
 
     const resources = [
         {
@@ -291,6 +298,10 @@ const EducationalRessSection = () => {
         }
     ];
 
+    const handelLink = () => {
+
+        navigate("./educational")
+    }
 
     return <div className="educational-ress-section center-h">
         <div className="container">
@@ -305,27 +316,27 @@ const EducationalRessSection = () => {
                         onMouseEnter={() => setElementHovered(index)}
                         onMouseLeave={() => setElementHovered(null)}
                         initial={{ backgroundColor: "#06a52e" }}
-                        animate={elementHovered == index ? { backgroundColor: "#FFFFFF" } : { backgroundColor: "#06a52e" }}
+                        animate={elementHovered === index ? { backgroundColor: "#FFFFFF" } : { backgroundColor: "#06a52e" }}
                         className="educational-ress-element">
                         <motion.div
                             initial={{ y: "400%" }}
-                            animate={elementHovered == index ? { y: "0" } : { y: "400%" }}
+                            animate={elementHovered === index ? { y: "0" } : { y: "400%" }}
                             transition={{ duration: 0.3 }}
                             className="educational-ress-heading">
                             <motion.h2
                                 initial={{ color: "#fff" }}
-                                animate={elementHovered == index ? { color: "#222222" } : { color: "#fff" }}
+                                animate={elementHovered === index ? { color: "#222222" } : { color: "#fff" }}
                             >
                                 {item.title}
                             </motion.h2>
                         </motion.div>
                         <motion.div
                             initial={{ y: "150%" }}
-                            animate={elementHovered == index ? { y: "0" } : { y: "150%" }}
+                            animate={elementHovered === index ? { y: "0" } : { y: "150%" }}
                             transition={{ duration: 0.3 }}
                             className="educational-ress-hover">
                             <p>{item.description}</p>
-                            <BtnPrimary text="Browse" />
+                            <BtnPrimary text="Browse" action={handelLink} />
                         </motion.div>
                     </motion.div>
                 ))}
@@ -367,51 +378,3 @@ const GetInvolvedSection = () => {
 
 
 
-
-
-
-
-
-
-const Post = () => {
-    const [isPostHovering, setIsPostHovering] = useState(false)
-
-    return <motion.div
-        onMouseEnter={() => setIsPostHovering(true)}
-        onMouseLeave={() => setIsPostHovering(false)}
-        className="single-post">
-
-        <div className="single-post-content">
-            <h6>The Power of Collective Action: How Communities Can Save the Planet</h6>
-            <p>Posted on September 15, 2024</p>
-        </div>
-
-        <motion.div
-            initial={{ y: "100%" }}
-            animate={isPostHovering ? { y: `-300px` } : { y: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
-            className="single-post-hovered">
-
-            <div className="single-post-hovered-content">
-                <div className="time-to-read"><h6>4 min to read</h6></div>
-                <div className="heading">
-                    <h3>The Power of Collective Action: How Communities Can Save the Planet</h3>
-                    <p>The Power of Collective Action: How Communities Can Save the Planet</p>
-                    <Link to="./article/1">
-                        <BtnShadow text="Read more" />
-                    </Link>
-                </div>
-            </div>
-        </motion.div>
-    </motion.div>
-}
-const SucessStoriesContent = () => {
-
-    return (<div className="success-stories-heading">
-        <h5>Success Stories</h5>
-        <h2>How One Community Reduced Its Carbon Footprint by 50%</h2>
-        <p>Discover the inspiring journey of a small town that implemented green initiatives and became a model for sustainable living.</p>
-        <BtnShadow text="See more" />
-    </div>)
-
-}

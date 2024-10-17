@@ -338,6 +338,11 @@ button {
 header {
   padding: 30px 0;
 }
+@media (max-width: 768px) {
+  header {
+    position: relative;
+  }
+}
 header .nav-links {
   display: flex;
   justify-content: space-between;
@@ -345,7 +350,6 @@ header .nav-links {
   min-width: 100%;
   margin-right: 12px;
   z-index: 1000;
-  position: relative;
   font-weight: 500;
 }
 header .nav-links .menu-lines {
@@ -396,19 +400,35 @@ header .nav-links nav .nav-link > span:last-of-type {
   transform: scale(0);
   z-index: 1000;
 }
+header .nav-links nav .nav-link.active > span:first-of-type {
+  color: #FFFFFF;
+}
 header .nav-links nav .nav-link.active > span:last-of-type {
   transform: scale(1);
 }
 @media (max-width: 768px) {
-  header .nav-links {
+  header .nav-links nav {
     position: absolute;
+    top: 6rem;
+    width: 100%;
     flex-direction: column;
-    align-content: center;
-    top: 100px;
-    right: 0;
+    gap: 25px;
     background-color: #fff;
-    padding: 20px;
-    display: none;
+    z-index: 3000;
+  }
+  header .nav-links nav .nav-link {
+    color: #222222;
+    text-align: start;
+    padding-inline: 20px;
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  header .nav-links {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   header .nav-links.open {
     display: flex;
@@ -447,8 +467,12 @@ footer .container .footer-social {
   gap: 10px;
 }
 
-.educational {
-  padding-block: 25px;
+.educational .educational-hero-heading {
+  margin-block-start: 35px;
+  margin-block-end: 15px;
+}
+.educational .educational-hero-heading h1 {
+  color: #222222;
 }
 
 .edu-content {
@@ -822,13 +846,13 @@ footer .container .footer-social {
   display: flex;
   flex-direction: row;
 }
-.Blog .blog-container .container .category-section .categories {
+.Blog .blog-container .container .category-section .group-filter {
   max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.Blog .blog-container .container .category-section .categories .checkbox-filter {
+.Blog .blog-container .container .category-section .group-filter .checkbox-filter {
   display: flex;
   align-items: center;
   width: fit-content;
@@ -845,7 +869,7 @@ footer .container .footer-social {
   border-right: none;
   cursor: pointer;
 }
-.Blog .blog-container .container .category-section .categories .checkbox-filter input[type=checkbox] {
+.Blog .blog-container .container .category-section .group-filter .checkbox-filter input[type=checkbox] {
   margin-right: 10px;
   appearance: none;
   -webkit-appearance: none;
@@ -856,10 +880,10 @@ footer .container .footer-social {
   accent-color: #C042EC;
   position: relative;
 }
-.Blog .blog-container .container .category-section .categories .checkbox-filter input[type=checkbox]:checked {
+.Blog .blog-container .container .category-section .group-filter .checkbox-filter input[type=checkbox]:checked {
   background-color: #F5F5F5;
 }
-.Blog .blog-container .container .category-section .categories .checkbox-filter input[type=checkbox]:checked::before {
+.Blog .blog-container .container .category-section .group-filter .checkbox-filter input[type=checkbox]:checked::before {
   content: "";
   display: block;
   position: absolute;
@@ -870,7 +894,7 @@ footer .container .footer-social {
   height: 12px;
   background-color: #C042EC;
 }
-.Blog .blog-container .container .category-section .categories .checkbox-filter.active {
+.Blog .blog-container .container .category-section .group-filter .checkbox-filter.active {
   background-color: #C042EC;
   color: #F5F5F5;
   font-weight: 600;

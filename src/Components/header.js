@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import logo from '../Assets/EarthGuardians.svg';
 import logoWh from '../Assets/EarthGuardians-wh.svg';
 
@@ -8,12 +8,14 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 
 const Header = ({ color }) => {
+    const ref = useRef();
     return (
         <header className={`container ${color === "white" ? "" : "dark"}`} >
             <div className="nav-links" >
                 {color === "white" ? <img src={logoWh} alt='logo' /> : <img src={logo} alt='logo' />}
-
                 <NavMenu />
+
+
             </div>
         </header>
     );
@@ -24,19 +26,21 @@ const NavMenu = () => {
     const [isActiveNav, setActiveNav] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
-    // Detect screen size
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth <= 768) {
                 setIsMobile(true);
+                console.log(window.innerWidth)
+                console.log(isMobile)
+
             } else {
                 setIsMobile(false);
-                setActiveNav(false); // Close the mobile menu on large screens
+                setActiveNav(false);
             }
         };
 
         window.addEventListener('resize', handleResize);
-        handleResize(); // Initialize value
+        handleResize();
 
         return () => {
             window.removeEventListener('resize', handleResize);
@@ -50,10 +54,8 @@ const NavMenu = () => {
                     <motion.button
                         className='menu-lines'
                         onClick={() => setActiveNav(!isActiveNav)}
-                        initial={false}
                         animate={isActiveNav ? "open" : "closed"}
                     >
-                        {/* Hamburger button spans */}
                         <motion.span
                             style={{
                                 left: "50%",

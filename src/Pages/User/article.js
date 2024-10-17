@@ -3,15 +3,27 @@ import imgHero from "../../Assets/Imgs/pexels-jplenio-2566845.jpg";
 import Header from '../../Components/header';
 
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
 import { ArrowRightIcon, BoredDisppointedEmoji, CheckIcon, HappyBigSmiledEmoji, HappySmiledEmoji, SadEmbrassedEmoji, SadPainEmoji, Timer } from "../../Components/icons";
 
 import { motion, useInView } from 'framer-motion';
 import Footer from '../../Components/footer';
 const Article = () => {
 
+    const { id } = useParams();
+
+    const { isPending, error, data } = useQuery({
+        queryKey: ['article', id],
+        queryFn: () =>
+            fetch(`http://localhost:5500/articles/${id}`).then((res) =>
+                res.json(),
+            ),
+    });
+
     return (
         <div className='Article'>
+            {console.log(data)}
             <div className='center-h'>
                 <Header />
             </div>

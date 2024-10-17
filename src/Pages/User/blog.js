@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 
 import Header from "../../Components/header";
@@ -27,8 +27,8 @@ export default function Blog() {
 
     const [selectedCategories, setSelectedCategories] = useState(["All"]);
 
-    const handleCategorySelect = (category) => {
-        if (category === "All") {
+    function handleCategorySelect(category) {
+        if (category === "All" || selectedCategories.length == 0) {
             setSelectedCategories(["All"]);
         } else {
 
@@ -45,11 +45,27 @@ export default function Blog() {
         }
     };
 
+    const [selectedSort, setSelectedSort] = useState(null);
 
+    function handelSelectedSort(sort) {
+        if (sort) {
+            if (selectedSort === sort) {
+                setSelectedSort(null)
+            }
+            else {
+                setSelectedSort(sort)
+            }
+        }
+
+    }
     const filteredBlogs = selectedCategories.includes("All")
         ? data
         : data?.filter(blog => selectedCategories.includes(blog.category));
 
+    const sortedBlogs = selectedSort == null ? filteredBlogs
+        : selectedSort === "A-Z"
+            ? filteredBlogs.sort((a, b) => a.title.localeCompare(b.title))
+            : filteredBlogs.sort((a, b) => b.title.localeCompare(a.title));
     return (
         <div className="Blog">
             <div className="hero-section center-h">
@@ -67,17 +83,18 @@ export default function Blog() {
                                 selectedCategories={selectedCategories}
                                 onCategorySelect={handleCategorySelect}
                             />
+                            <SortBlogs
+                                selectedSort={selectedSort}
+                                handelSelectedSort={handelSelectedSort}
+                            />
                         </div>
 
                         <div className="blogs-wrapper">
                             <div className="blogs">
-                                {filteredBlogs && filteredBlogs.map((ele, index) => (
+                                {sortedBlogs && sortedBlogs.map((ele, index) => (
                                     <Post
                                         key={index}
-                                        title={ele.title}
-                                        time={ele.time_to_read}
-                                        date={ele.date}
-                                        category={ele.category}
+                                        props={ele}
                                     />
                                 ))}
                             </div>
@@ -98,7 +115,7 @@ const Categories = ({ categories, selectedCategories, onCategorySelect }) => {
     };
 
     return (
-        <div className="categories">
+        <div className="group-filter">
             <h4>Categories</h4>
             {categories.map((category, index) => (
                 <label key={index} className="checkbox-filter">
@@ -113,21 +130,36 @@ const Categories = ({ categories, selectedCategories, onCategorySelect }) => {
         </div>
     );
 };
-const SortBlogs = () => {
-    return <div className="sort-by-section">
-        <label key={index} className="checkbox-filter">
+const SortBlogs = ({ selectedSort, handelSelectedSort }) => {
+    return <div className="group-filter">
+        <h4>Sort by </h4>
+        <label className="checkbox-filter">
             <input
                 type="checkbox"
-                checked={selectedCategories.includes(category)}
-                onChange={() => handleCheckboxChange(category)}
+                checked={selectedSort === "A-Z"}
+                onChange={() => handelSelectedSort("A-Z")}
             />
-            {category}
+            A-Z
         </label>
-    </div>
+        <label className="checkbox-filter">
+            <input
+                type="checkbox"
+                checked={selectedSort === "Z-A"}
+                onChange={() => handelSelectedSort("Z-A")}
+            />
+            Z-A
+        </label>
+    </div >
 }
-const Post = ({ title, time, date, category }) => {
+const Post = ({ props }) => {
     const [isPostHovering, setIsPostHovering] = useState(false);
+    const navigate = useNavigate();
 
+
+    const handelBlogLink = () => {
+
+        navigate(`./article/${props.id}`)
+    }
     return (
         <motion.div className="single-post">
             <motion.div
@@ -144,21 +176,19 @@ const Post = ({ title, time, date, category }) => {
                     transition={{ type: "tween", duration: 0.3 }}
                     className="single-post-img-hovered"
                 >
-                    <div className="time-to-read"><span>{time}</span></div>
+                    <div className="time-to-read"><span>{props.time}</span></div>
                     <div className="heading">
-                        <Link to="./article/1">
-                            <BtnShadow text="Read more" />
-                        </Link>
+                        <BtnShadow text="Read more" action={handelBlogLink} />
                     </div>
                 </motion.div>
             </motion.div>
 
             <div className="single-post-content">
                 <div className="details">
-                    <Tag text={category} />
-                    <h6>{date}</h6>
+                    <Tag text={props.category} />
+                    <h6>{props.date}</h6>
                 </div>
-                <h4>{title}</h4>
+                <h4>{props.title}</h4>
             </div>
         </motion.div>
     );
